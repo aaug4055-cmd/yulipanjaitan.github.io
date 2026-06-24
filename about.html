@@ -10,7 +10,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     
     <style>
-        /* CSS Sinkron Sesuai dengan index.html */
         * {
             margin: 0;
             padding: 0;
@@ -228,8 +227,8 @@
 
         .footer-container {
             display: grid;
-            grid-template-columns: 1.2fr 1fr 1.5fr;
-            gap: 40px;
+            grid-template-columns: 1.5fr 1fr; /* Diubah menjadi 2 kolom saja */
+            gap: 50px;
             margin-bottom: 40px;
         }
 
@@ -261,7 +260,7 @@
             color: #26d4a5;
         }
 
-        .footer-links h4, .footer-maps h4 {
+        .footer-links h4 {
             color: white;
             font-size: 15px;
             font-weight: 700;
@@ -287,23 +286,6 @@
 
         .footer-links ul li a:hover {
             color: #26d4a5;
-        }
-
-        .map-responsive {
-            overflow: hidden;
-            padding-bottom: 45%;
-            position: relative;
-            height: 0;
-            border-radius: 8px;
-        }
-
-        .map-responsive iframe {
-            left: 0;
-            top: 0;
-            height: 100%;
-            width: 100%;
-            position: absolute;
-            border: 0;
         }
 
         .footer-bottom {
@@ -336,7 +318,6 @@
             .about-section { grid-template-columns: 1fr; gap: 40px; padding: 130px 5% 40px 5%; }
             .history-grid { grid-template-columns: 1fr; gap: 25px; }
             .footer-container { grid-template-columns: 1fr; gap: 30px; }
-            .map-responsive { padding-bottom: 60%; }
         }
     </style>
 </head>
@@ -401,7 +382,7 @@
         </div>
     </section>
 
-    <!-- FOOTER -->
+    <!-- FOOTER (PETA DIHAPUS) -->
     <footer>
         <div class="footer-container">
             <div class="footer-brand">
@@ -419,19 +400,13 @@
                     <li><a href="index.html">Home</a></li>
                     <li><a href="about.html">About Me</a></li>
                     <li><a href="index.html#locations">Locations & Schedules</a></li>
+                    <li><a href="index.html#contact">Contact Us</a></li>
                 </ul>
-            </div>
-
-            <div class="footer-maps">
-                <h4>Peta Lokasi (Batam)</h4>
-                <div class="map-responsive">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d127641.15682855214!2d103.92429486026365!3d1.1123512248555813!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31d98bf723e7f225%3A0x6bda6396e94998!2sBatam%2C%20Kota%20Batam%2C%20Kepulauan%20Riau!5e0!3m2!1sid!2sid!4v1700000000000!3m2!1sid!2sid" allowfullscreen="" loading="lazy"></iframe>
-                </div>
             </div>
         </div>
 
         <div class="footer-bottom">
-            <p>© 2026 drg. Yuli Kartilla Panjaitan. All Rights Reserved.</p>
+            <p>&copy; 2026 drg. Yuli Kartilla Panjaitan. All Rights Reserved.</p>
             <p>Designed with <i class="fa-solid fa-heart" style="color: #e11d48;"></i> in Batam</p>
         </div>
     </footer>
