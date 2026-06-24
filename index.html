@@ -232,127 +232,6 @@
             opacity: 1;
         }
 
-        /* SECTION: Tentang Dokter */
-        .about-section {
-            padding: 90px 8%;
-            background-color: #ffffff;
-            display: grid;
-            grid-template-columns: 1fr 1.5fr;
-            gap: 60px;
-            align-items: start;
-        }
-
-        .about-img-box {
-            position: relative;
-            border-radius: 16px;
-            overflow: hidden;
-            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
-        }
-
-        .about-img-box img {
-            width: 100%;
-            height: auto;
-            display: block;
-            object-fit: cover;
-        }
-
-        .about-details h2 {
-            font-size: 32px;
-            color: #1d2939;
-            margin-bottom: 10px;
-            font-weight: 700;
-        }
-
-        .about-details .subtitle {
-            font-size: 15px;
-            color: #26d4a5;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            margin-bottom: 20px;
-        }
-
-        .about-details p {
-            font-size: 14px;
-            color: #555;
-            line-height: 1.7;
-            margin-bottom: 25px;
-        }
-
-        .skills-title {
-            font-size: 16px;
-            font-weight: 700;
-            color: #0c4a60;
-            margin-bottom: 12px;
-        }
-
-        .skills-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            margin-bottom: 35px;
-        }
-
-        .skill-tag {
-            background-color: #ebf7fd;
-            color: #0c4a60;
-            padding: 8px 16px;
-            border-radius: 20px;
-            font-size: 13px;
-            font-weight: 600;
-            transition: all 0.3s;
-        }
-
-        .skill-tag:hover {
-            background-color: #26d4a5;
-            color: white;
-        }
-
-        .history-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 30px;
-        }
-
-        .history-block h3 {
-            font-size: 16px;
-            color: #1d2939;
-            margin-bottom: 15px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            font-weight: 700;
-            border-bottom: 2px solid #f0f4f8;
-            padding-bottom: 8px;
-        }
-
-        .history-block h3 i {
-            color: #26d4a5;
-        }
-
-        .history-list {
-            list-style: none;
-        }
-
-        .history-item {
-            position: relative;
-            padding-left: 20px;
-            margin-bottom: 12px;
-            font-size: 13.5px;
-            color: #555;
-            line-height: 1.5;
-        }
-
-        .history-item::before {
-            content: "•";
-            color: #26d4a5;
-            font-size: 18px;
-            position: absolute;
-            left: 0;
-            top: -2px;
-            font-weight: bold;
-        }
-
         /* Info Cards Section */
         .info-section {
             display: grid;
@@ -699,13 +578,28 @@
             nav ul li { margin: 10px 0; }
             .nav-socials { margin-left: 0; padding-left: 0; border-left: none; margin-top: 10px; }
             
-            .hero { padding: 130px 5% 50px 5%; background: #ebf7fd; min-height: auto; }
+            .hero { 
+                padding: 130px 5% 40px 5%; 
+                background: #ebf7fd; 
+                min-height: auto; 
+                display: flex;
+                flex-direction: column;
+                gap: 35px;
+            }
+            .hero-content { max-width: 100%; }
             .hero-content h1 { font-size: 36px; }
-            .hero-slider-container { display: none; }
             .hero-icons { gap: 15px; justify-content: flex-start; }
             
-            .about-section { grid-template-columns: 1fr; gap: 40px; padding: 60px 5%; }
-            .history-grid { grid-template-columns: 1fr; gap: 25px; }
+            .hero-slider-container { 
+                display: block;
+                position: relative;
+                right: auto;
+                top: auto;
+                width: 100%;
+                height: 260px;
+                margin-top: 10px;
+                border-radius: 12px;
+            }
             
             .info-section { grid-template-columns: 1fr; padding: 40px 5%; }
             .card { min-height: auto; padding: 25px; }
@@ -725,8 +619,8 @@
         <nav>
             <div class="menu-toggle" id="mobile-menu"><i class="fa-solid fa-bars"></i></div>
             <ul id="nav-list">
-                <li><a href="#">Beranda</a></li>
-                <li><a href="#tentang-dokter">Tentang Dokter</a></li>
+                <li><a href="index.html">Beranda</a></li>
+                <li><a href="about.html">Tentang Dokter</a></li>
                 <li><a href="#klinik">Lokasi & Jadwal</a></li>
                 <li><a href="#kontak">Hubungi Kami</a></li>
                 <div class="nav-socials">
@@ -743,7 +637,6 @@
             <h1>Healthy teeth, happy life</h1>
             <p class="hero-desc">Memberikan Perawatan Gigi Profesional Berkualitas di Lanera Dental Care & TP Dental Batam</p>
             
-            <!-- Area Ikon dengan Teks -->
             <div class="hero-icons">
                 <a href="#klinik" class="icon-item" title="Klik untuk cek jadwal scaling">
                     <div class="icon-box"><i class="fa-solid fa-sparkles"></i></div>
@@ -762,7 +655,6 @@
             <p class="hero-tagline"><i class="fa-regular fa-circle-check" style="color: #26d4a5;"></i> Let's Take Care of Your Teeth: Healthy Smile, Great Life!</p>
         </div>
         
-        <!-- Slider Gambar -->
         <div class="hero-slider-container">
             <div class="slide active" style="background-image: url('lanera-interior.jpg');"></div>
             <div class="slide" style="background-image: url('tp-dental-luar.jpg');"></div>
@@ -771,53 +663,10 @@
         </div>
     </section>
 
-    <!-- SECTION: Tentang Dokter -->
-    <section class="about-section" id="tentang-dokter">
-        <div class="about-img-box">
-            <img src="drg-yuli.jpg" alt="Foto drg. Yuli Kartilla Panjaitan" onerror="this.src='https://via.placeholder.com/400x500?text=Foto+drg.+Yuli'">
-        </div>
-        
-        <div class="about-details">
-            <h2>drg. Yuli Kartilla Panjaitan</h2>
-            <div class="subtitle">Dokter Gigi Praktisi</div>
-            <p>Beliau adalah seorang dokter gigi profesional yang berdedikasi tinggi dalam memberikan perawatan kesehatan gigi dan mulut bagi masyarakat Batam. Berfokus pada kenyamanan pasien, drg. Yuli aktif melayani perawatan gigi kosmetik maupun restoratif di Lanera Dental Care dan TP Dental.</p>
-            
-            <div class="skills-title">Keahlian & Layanan Medis:</div>
-            <div class="skills-container">
-                <div class="skill-tag">Bleaching (Pemutihan Gigi)</div>
-                <div class="skill-tag">Scaling (Pembersihan Karang)</div>
-                <div class="skill-tag">Penambalan Estetik</div>
-                <div class="skill-tag">Perawatan Saluran Akar</div>
-                <div class="skill-tag">Pencabutan Gigi</div>
-                <div class="skill-tag">Gigi Tiruan (Palsu)</div>
-                <div class="skill-tag">Pencegahan Gigi Berlubang Anak</div>
-            </div>
-            
-            <div class="history-grid">
-                <div class="history-block">
-                    <h3><i class="fa-solid fa-graduation-cap"></i> Riwayat Pendidikan</h3>
-                    <ul class="history-list">
-                        <li class="history-item">Lulusan Pendidikan Profesi Dokter Gigi (drg.)</li>
-                        <li class="history-item">Aktif mengikuti Seminar & Workshop Kedokteran Gigi Berkelanjutan (IKORGI / PDGI)</li>
-                    </ul>
-                </div>
-                
-                <div class="history-block">
-                    <h3><i class="fa-solid fa-briefcase"></i> Pengalaman Praktik</h3>
-                    <ul class="history-list">
-                        <li class="history-item">Dokter Gigi Praktisi di Lanera Dental Care (Batam Center)</li>
-                        <li class="history-item">Dokter Gigi Praktisi di TP Dental (Lubuk Baja, Batam)</li>
-                        <li class="history-item">Berpengalaman menangani kasus dental restoratif dan estetika gigi</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Info Cards Section (Pilihan Klinik) -->
+    <!-- Info Cards Section -->
     <section class="info-section" id="klinik">
         
-        <!-- KLINIK 1: Lanera Dental Care -->
+        <!-- KLINIK 1 -->
         <div class="card">
             <div>
                 <h2>Lanera Dental Care</h2>
@@ -833,7 +682,7 @@
             </div>
         </div>
 
-        <!-- KLINIK 2: TP Dental -->
+        <!-- KLINIK 2 -->
         <div class="card">
             <div>
                 <h2>TP Dental</h2>
@@ -846,7 +695,7 @@
             </div>
         </div>
 
-        <!-- CARD 3: Panduan Registrasi Pasien (Menggunakan Modal Pop-up) -->
+        <!-- CARD 3 -->
         <div class="card">
             <div>
                 <h2>Informasi Pasien</h2>
@@ -860,7 +709,7 @@
 
     </section>
 
-    <!-- MODAL BOX: PANDUAN PENDAFTARAN -->
+    <!-- MODAL BOX -->
     <div id="panduanModal" class="modal">
         <div class="modal-content">
             <span class="close-btn" onclick="toggleModal(false)">&times;</span>
@@ -880,7 +729,7 @@
                     <div class="step-number">2</div>
                     <div class="step-text">
                         <h4>Hubungi Kontak Admin</h4>
-                        <p>Klik tombol tombol <strong>Admin</strong> atau <strong>Chat Admin</strong> pada kartu klinik yang dipilih untuk langsung dialihkan ke ruang obrolan WhatsApp.</p>
+                        <p>Klik tombol <strong>Admin</strong> atau <strong>Chat Admin</strong> pada kartu klinik yang dipilih untuk langsung dialihkan ke ruang obrolan WhatsApp.</p>
                     </div>
                 </div>
 
@@ -893,7 +742,7 @@
                             • <strong>Nama Pasien:</strong> <br>
                             • <strong>Klinik Tujuan:</strong> (KBC / Mitra Raya / TP Dental)<br>
                             • <strong>Hari & Tanggal Kunjungan:</strong> <br>
-                            • <strong>Keluhan / Jenis Perawatan:</strong> (Contoh: Scaling / Behel / Cabut)
+                            • <strong>Keluhan / Jenis Perawatan:</strong>
                         </blockquote>
                     </div>
                 </div>
@@ -909,13 +758,12 @@
         </div>
     </div>
 
-    <!-- FOOTER & KONTAK TERPADU -->
+    <!-- FOOTER -->
     <footer id="kontak">
         <div class="footer-container">
             <div class="footer-brand">
                 <h3>drg. Yuli Kartilla P.</h3>
                 <p>Layanan konsultasi dan perawatan gigi profesional di Kota Batam. Temukan senyum sehat dan rasa percaya diri Anda kembali melalui perawatan dental modern terbaik kami.</p>
-                
                 <div class="footer-socials-link">
                     <a href="https://www.instagram.com/laneradentalcare/?hl=id" target="_blank"><i class="fa-brands fa-instagram" style="color: #26d4a5;"></i> @laneradentalcare</a>
                     <a href="https://www.instagram.com/tpdentalbatam/" target="_blank"><i class="fa-brands fa-instagram" style="color: #26d4a5;"></i> @tpdentalbatam</a>
@@ -925,8 +773,8 @@
             <div class="footer-links">
                 <h4>Navigasi</h4>
                 <ul>
-                    <li><a href="#">Beranda</a></li>
-                    <li><a href="#tentang-dokter">Tentang Dokter</a></li>
+                    <li><a href="index.html">Beranda</a></li>
+                    <li><a href="about.html">Tentang Dokter</a></li>
                     <li><a href="#klinik">Lokasi & Jadwal Klinik</a></li>
                 </ul>
             </div>
@@ -958,7 +806,6 @@
             window.open(url, '_blank');
         }
 
-        // Fungsi Buka-Tutup Modal Box
         function toggleModal(show) {
             const modal = document.getElementById('panduanModal');
             if (show) {
@@ -970,7 +817,6 @@
             }
         }
 
-        // Tutup modal otomatis jika area luar kotak putih diklik
         window.onclick = function(event) {
             const modal = document.getElementById('panduanModal');
             if (event.target === modal) {
