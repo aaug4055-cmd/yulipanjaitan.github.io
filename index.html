@@ -1,235 +1,388 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dentist WordPress Themes - Jevelin Clone</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
 
-<title>Lanera Dental Clinic</title>
+        body {
+            background-color: #f9fbfd;
+            color: #333;
+            overflow-x: hidden;
+        }
 
-<link rel="stylesheet" href="style.css">
+        /* Navigation Bar */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 25px 8%;
+            background: transparent;
+            position: absolute;
+            width: 100%;
+            z-index: 10;
+        }
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+        .logo {
+            display: flex;
+            align-items: center;
+            font-weight: 700;
+            font-size: 22px;
+            color: #111;
+        }
 
-<link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+        .logo i {
+            color: #26d4a5;
+            margin-right: 8px;
+            font-size: 24px;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            align-items: center;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #555;
+            font-size: 14px;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #26d4a5;
+        }
+
+        .nav-socials {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-left: 20px;
+            border-left: 1px solid #ddd;
+            padding-left: 20px;
+            color: #888;
+        }
+
+        .nav-socials i {
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+
+        .nav-socials i:hover {
+            color: #26d4a5;
+        }
+
+        /* Menu Toggle untuk Mobile */
+        .menu-toggle {
+            display: none;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            min-height: 85vh;
+            display: flex;
+            align-items: center;
+            padding: 0 8%;
+            background: radial-gradient(circle at 75% 40%, transparent 35%, rgba(235, 247, 253, 0.6) 35%);
+        }
+
+        .hero-content {
+            max-width: 500px;
+            z-index: 2;
+        }
+
+        .hero-content h1 {
+            font-size: 48px;
+            font-weight: 700;
+            line-height: 1.2;
+            color: #1d2939;
+            margin-bottom: 15px;
+        }
+
+        .hero-content p {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #888;
+            font-weight: 600;
+            margin-bottom: 30px;
+        }
+
+        .hero-icons {
+            display: flex;
+            gap: 15px;
+        }
+
+        .icon-box {
+            width: 50px;
+            height: 50px;
+            background-color: #26d4a5;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 20px;
+            box-shadow: 0 8px 20px rgba(38, 212, 165, 0.3);
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .icon-box:hover {
+            transform: translateY(-5px);
+        }
+
+        /* Hero Image / Model */
+        .hero-image {
+            position: absolute;
+            right: 10%;
+            bottom: 0;
+            width: 45%;
+            height: 90%;
+            background: url('https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&q=80&w=800') no-repeat center bottom;
+            background-size: contain;
+            z-index: 1;
+        }
+
+        /* Info Cards Section */
+        .info-section {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2px;
+            padding: 0 8% 50px 8%;
+            margin-top: -50px;
+            position: relative;
+            z-index: 3;
+        }
+
+        .card {
+            background-color: #bbf3f5;
+            padding: 40px;
+            min-height: 280px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .card:nth-child(2) { background-color: #c7f7f9; }
+        .card:nth-child(3) { background-color: #d3f9fb; }
+
+        .card h2 {
+            font-size: 24px;
+            color: #0c4a60;
+            font-weight: 400;
+        }
+
+        .card h3 {
+            font-size: 15px;
+            text-transform: uppercase;
+            color: #111;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            letter-spacing: 0.5px;
+        }
+
+        .card p {
+            font-size: 13px;
+            color: #555;
+            line-height: 1.6;
+        }
+
+        .card i.card-icon {
+            font-size: 28px;
+            color: #0c4a60;
+            margin-bottom: 15px;
+        }
+
+        .card-btn {
+            align-self: flex-start;
+            margin-top: 20px;
+            padding: 12px 30px;
+            background-color: white;
+            color: #333;
+            text-decoration: none;
+            font-size: 12px;
+            font-weight: 600;
+            border-radius: 25px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            transition: all 0.3s;
+            cursor: pointer;
+            border: none;
+        }
+
+        .card-btn:hover {
+            background-color: #111;
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        /* Floating Side Menu */
+        .side-menu {
+            position: fixed;
+            right: 20px;
+            top: 30%;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            display: flex;
+            flex-direction: column;
+            padding: 10px 0;
+            z-index: 100;
+        }
+
+        .side-menu a {
+            padding: 12px 18px;
+            color: #888;
+            font-size: 18px;
+            text-decoration: none;
+            transition: color 0.3s;
+            display: flex;
+            justify-content: center;
+        }
+
+        .side-menu a:hover { color: #26d4a5; }
+
+        /* Responsive Breakpoints */
+        @media (max-width: 992px) {
+            header { padding: 20px 5%; }
+            .menu-toggle { display: block; color: #111; }
+            nav ul {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: white;
+                padding: 20px;
+                box-shadow: 0 10px 15px rgba(0,0,0,0.05);
+            }
+            nav ul.active { display: flex; }
+            nav ul li { margin: 10px 0; }
+            .nav-socials { margin-left: 0; padding-left: 0; border-left: none; margin-top: 10px; }
+            .hero { padding: 0 5%; background: #ebf7fd; }
+            .hero-image { display: none; }
+            .info-section { grid-template-columns: 1fr; padding: 20px 5%; margin-top: 20px; }
+            .side-menu { display: none; }
+        }
+    </style>
 </head>
-
 <body>
 
-<header>
-
-<div class="container nav">
-
-<div class="logo">
-LANERA
-</div>
-
-<nav>
-
-<ul>
-<li><a href="#home">Home</a></li>
-<li><a href="#about">Tentang</a></li>
-<li><a href="#services">Layanan</a></li>
-<li><a href="#doctor">Dokter</a></li>
-<li><a href="#contact">Kontak</a></li>
-</ul>
-
-</nav>
-
-</div>
-
-</header>
-
-<section id="home" class="hero">
-
-<div class="hero-left">
-
-<h1>
-Klinik Gigi Modern
-Untuk Senyum Sehat
-</h1>
-
-<p>
-Perawatan gigi profesional dengan teknologi modern dan tenaga medis berpengalaman.
-</p>
-
-<div class="hero-buttons">
-
-<a href="#appointment" class="btn-primary">
-Buat Janji
-</a>
-
-<a href="#services" class="btn-secondary">
-Layanan
-</a>
-
-</div>
-
-</div>
-
-<div class="hero-right">
-
-<img src="assets/hero.jpg">
-
-</div>
-
-</section>
-
-<section class="info-cards">
-
-<div class="info-card">
-
-<i class="fa-solid fa-phone"></i>
-
-<h3>Emergency</h3>
-
-<p>0812-3456-7890</p>
-
-</div>
-
-<div class="info-card">
-
-<i class="fa-solid fa-calendar-check"></i>
-
-<h3>Appointment</h3>
-
-<p>Reservasi Online</p>
-
-</div>
-
-<div class="info-card">
-
-<i class="fa-regular fa-clock"></i>
-
-<h3>Jam Operasional</h3>
-
-<p>08.00 - 20.00</p>
-
-</div>
-
-</section>
-
-<section id="services" class="services">
-
-<h2>Layanan Kami</h2>
-
-<div class="service-grid">
-
-<div class="service-box">
-<i class="fa-solid fa-tooth"></i>
-<h3>Scaling</h3>
-<p>Pembersihan karang gigi.</p>
-</div>
-
-<div class="service-box">
-<i class="fa-solid fa-heart"></i>
-<h3>Bleaching</h3>
-<p>Memutihkan gigi.</p>
-</div>
-
-<div class="service-box">
-<i class="fa-solid fa-syringe"></i>
-<h3>Tambal Gigi</h3>
-<p>Perawatan gigi berlubang.</p>
-</div>
-
-<div class="service-box">
-<i class="fa-solid fa-stethoscope"></i>
-<h3>Cabut Gigi</h3>
-<p>Tindakan profesional.</p>
-</div>
-
-</div>
-
-</section>
-
-<section id="doctor" class="doctor">
-
-<div class="doctor-image">
-
-<img src="assets/doctor.jpg">
-
-</div>
-
-<div class="doctor-content">
-
-<h2>drg. Nama Dokter</h2>
-
-<p>
-Dokter gigi berpengalaman dalam bidang konservasi,
-estetika dan perawatan gigi keluarga.
-</p>
-
-<a href="assets/cv.pdf"
-class="btn-primary"
-download>
-
-Download CV
-
-</a>
-
-</div>
-
-</section>
-
-<section id="appointment" class="appointment">
-
-<h2>Buat Janji Temu</h2>
-
-<form id="appointmentForm">
-
-<input type="text" placeholder="Nama">
-
-<input type="email" placeholder="Email">
-
-<input type="tel" placeholder="Nomor HP">
-
-<input type="date">
-
-<textarea placeholder="Pesan"></textarea>
-
-<button type="submit">
-Kirim Reservasi
-</button>
-
-</form>
-
-</section>
-
-<section class="gallery">
-
-<h2>Galeri Klinik</h2>
-
-<div class="gallery-grid">
-
-<img src="assets/clinic1.jpg">
-
-<img src="assets/clinic2.jpg">
-
-<img src="assets/clinic1.jpg">
-
-<img src="assets/clinic2.jpg">
-
-</div>
-
-</section>
-
-<footer id="contact">
-
-<h3>Lanera Dental Clinic</h3>
-
-<p>Batam, Indonesia</p>
-
-<p>0812-3456-7890</p>
-
-</footer>
-
-<a href="#" class="whatsapp">
-<i class="fab fa-whatsapp"></i>
-</a>
-
-<script src="script.js"></script>
-
+    <header>
+        <div class="logo">
+            <i class="fa-solid fa-square-plus"></i> JEVELIN
+        </div>
+        <nav>
+            <div class="menu-toggle" id="mobile-menu"><i class="fa-solid fa-bars"></i></div>
+            <ul id="nav-list">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Departments</a></li>
+                <li><a href="#">FAQ</a></li>
+                <li><a href="#">Contacts</a></li>
+                <div class="nav-socials">
+                    <i class="fa-brands fa-facebook-f"></i>
+                    <i class="fa-brands fa-twitter"></i>
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </div>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Dentist WordPress themes</h1>
+            <p>Create your medical website using jevelin</p>
+            <div class="hero-icons">
+                <div class="icon-box" onclick="showAlert('Detak Jantung')"><i class="fa-solid fa-heart-pulse"></i></div>
+                <div class="icon-box" onclick="showAlert('Peralatan Medis')"><i class="fa-solid fa-briefcase-medical"></i></div>
+                <div class="icon-box" onclick="showAlert('Stetoskop')"><i class="fa-solid fa-stethoscope"></i></div>
+            </div>
+        </div>
+        <div class="hero-image"></div>
+    </section>
+
+    <section class="info-section">
+        <div class="card">
+            <div>
+                <h2>1-800-600-380</h2>
+                <h3>Emergency Service</h3>
+                <p>Aliquam erat volutpat. Nullam imperdiet sapien felis, non lobortis odio mattis in. Quisque dapibus aliquet dictum. Integer dapibus ullamcorper est, ac.</p>
+            </div>
+            <button class="card-btn" onclick="showAlert('Emergency Call')">See More</button>
+        </div>
+
+        <div class="card">
+            <div>
+                <i class="fa-regular fa-calendar-check card-icon"></i>
+                <h3>Do you want to make an appointment</h3>
+                <p>Aliquam erat volutpat. Nullam imperdiet sapien felis, non lobortis odio mattis in. Quisque dapibus aliquet dictum.</p>
+            </div>
+            <button class="card-btn" onclick="showAppointment()">Book Now</button>
+        </div>
+
+        <div class="card">
+            <div>
+                <i class="fa-regular fa-clock card-icon"></i>
+                <h3>Opening Hours</h3>
+                <p>Monday – Friday: 08.00 - 17.00<br>Saturday – Sunday: 09.00 - 15.00</p>
+            </div>
+            <button class="card-btn" onclick="showAlert('Hubungi Kami')">Contact Us</button>
+        </div>
+    </section>
+
+    <div class="side-menu">
+        <a href="#" onclick="showAlert('Menu Samping 1')"><i class="fa-solid fa-layer-group"></i></a>
+        <a href="#" onclick="showAlert('Menu Samping 2')"><i class="fa-solid fa-glasses"></i></a>
+        <a href="#" onclick="showAlert('Menu Samping 3')"><i class="fa-solid fa-basket-shopping"></i></a>
+        <a href="#" onclick="showAlert('Menu Samping 4')"><i class="fa-regular fa-circle-question"></i></a>
+    </div>
+
+    <script>
+        // Fungsi interaktif untuk menampilkan pesan pop-up saat tombol/ikon diklik
+        function showAlert(namaFitur) {
+            alert("Kamu mengklik fitur: " + namaFitur + ". Fitur ini bisa dikembangkan lebih lanjut!");
+        }
+
+        function showAppointment() {
+            let nama = prompt("Masukkan nama kamu untuk membuat janji temu:");
+            if (nama) {
+                alert("Terima kasih " + nama + ", janji temu kamu berhasil dicatat!");
+            }
+        }
+
+        // Script untuk mengaktifkan responsive menu (hamburgers) saat dibuka di HP
+        const mobileMenu = document.getElementById('mobile-menu');
+        const navList = document.getElementById('nav-list');
+
+        mobileMenu.addEventListener('click', () => {
+            navList.classList.toggle('active');
+        });
+    </script>
 </body>
 </html>
