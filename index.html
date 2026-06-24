@@ -680,7 +680,7 @@
 
         .side-menu a:hover { color: #26d4a5; }
 
-        /* Responsive Breakpoints - Sudah Diupdate untuk Layar Smartphone */
+        /* Responsive Breakpoints */
         @media (max-width: 992px) {
             header { padding: 20px 5%; }
             .menu-toggle { display: block; color: #111; }
@@ -699,30 +699,10 @@
             nav ul li { margin: 10px 0; }
             .nav-socials { margin-left: 0; padding-left: 0; border-left: none; margin-top: 10px; }
             
-            /* Membuat tata letak menyusun ke bawah dengan rapi di HP */
-            .hero { 
-                padding: 130px 5% 40px 5%; 
-                background: #ebf7fd; 
-                min-height: auto; 
-                display: flex;
-                flex-direction: column;
-                gap: 35px;
-            }
-            .hero-content { max-width: 100%; }
+            .hero { padding: 130px 5% 50px 5%; background: #ebf7fd; min-height: auto; }
             .hero-content h1 { font-size: 36px; }
+            .hero-slider-container { display: none; }
             .hero-icons { gap: 15px; justify-content: flex-start; }
-            
-            /* Mengubah slider agar tampil estetik di bawah teks pada layar HP */
-            .hero-slider-container { 
-                display: block;
-                position: relative;
-                right: auto;
-                top: auto;
-                width: 100%;
-                height: 260px; /* Tinggi proporsional khusus layar HP */
-                margin-top: 10px;
-                border-radius: 12px;
-            }
             
             .about-section { grid-template-columns: 1fr; gap: 40px; padding: 60px 5%; }
             .history-grid { grid-template-columns: 1fr; gap: 25px; }
@@ -782,7 +762,7 @@
             <p class="hero-tagline"><i class="fa-regular fa-circle-check" style="color: #26d4a5;"></i> Let's Take Care of Your Teeth: Healthy Smile, Great Life!</p>
         </div>
         
-        <!-- Slider Gambar (Kompatibel di PC maupun HP) -->
+        <!-- Slider Gambar -->
         <div class="hero-slider-container">
             <div class="slide active" style="background-image: url('lanera-interior.jpg');"></div>
             <div class="slide" style="background-image: url('tp-dental-luar.jpg');"></div>
@@ -866,7 +846,7 @@
             </div>
         </div>
 
-        <!-- CARD 3: Informasi Panduan Registrasi Pasien -->
+        <!-- CARD 3: Panduan Registrasi Pasien (Menggunakan Modal Pop-up) -->
         <div class="card">
             <div>
                 <h2>Informasi Pasien</h2>
@@ -900,7 +880,7 @@
                     <div class="step-number">2</div>
                     <div class="step-text">
                         <h4>Hubungi Kontak Admin</h4>
-                        <p>Klik tombol <strong>Admin</strong> atau <strong>Chat Admin</strong> pada kartu klinik yang dipilih untuk langsung dialihkan ke ruang obrolan WhatsApp.</p>
+                        <p>Klik tombol tombol <strong>Admin</strong> atau <strong>Chat Admin</strong> pada kartu klinik yang dipilih untuk langsung dialihkan ke ruang obrolan WhatsApp.</p>
                     </div>
                 </div>
 
