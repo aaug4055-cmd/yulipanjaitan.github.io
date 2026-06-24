@@ -10,7 +10,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     
     <style>
-        /* CSS Terpadu & Sinkron */
         * {
             margin: 0;
             padding: 0;
@@ -99,7 +98,7 @@
 
         /* SECTION: Hero Banner */
         .hero-section {
-            padding: 180px 8% 100px 8%;
+            padding: 180px 8% 80px 8%;
             background: linear-gradient(135deg, #f5fcf9 0%, #ffffff 100%);
             display: grid;
             grid-template-columns: 1.2fr 1fr;
@@ -143,6 +142,8 @@
             font-size: 14px;
             box-shadow: 0 5px 15px rgba(38, 212, 165, 0.3);
             transition: all 0.3s;
+            cursor: pointer;
+            border: none;
         }
 
         .btn-primary:hover {
@@ -172,9 +173,44 @@
             box-shadow: 0 15px 35px rgba(0,0,0,0.06);
         }
 
+        /* SECTION: Slider Gambar Klinik Terpadu di Atas Layanan */
+        .slider-section {
+            padding: 40px 8% 10px 8%;
+            background: #ffffff;
+            display: flex;
+            justify-content: center;
+        }
+
+        .hero-slider-container {
+            position: relative;
+            width: 100%;
+            max-width: 900px;
+            height: 420px;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+        }
+
+        .slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            opacity: 0;
+            transition: opacity 0.8s ease-in-out;
+        }
+
+        .slide.active {
+            opacity: 1;
+        }
+
         /* SECTION: Services */
         .services-section {
-            padding: 90px 8%;
+            padding: 60px 8% 90px 8%;
             background: #ffffff;
             text-align: center;
         }
@@ -236,7 +272,7 @@
             line-height: 1.6;
         }
 
-        /* SECTION: Locations & Schedules */
+        /* SECTION: Locations & Schedules (Hubungi Kami Terintegrasi) */
         .locations-section {
             padding: 90px 8%;
             background: #f9fafb;
@@ -246,9 +282,7 @@
         .locations-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 40px;
-            max-width: 900px;
-            margin: 0 auto;
+            gap: 30px;
         }
 
         .location-card {
@@ -259,130 +293,195 @@
             border: 1px solid #eaecf0;
             text-align: left;
             padding: 35px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
 
         .location-card h3 {
-            font-size: 18px;
-            color: #1d2939;
-            margin-bottom: 15px;
+            font-size: 20px;
+            color: #0c4a60;
+            margin-bottom: 5px;
             font-weight: 700;
             display: flex;
             align-items: center;
             gap: 10px;
         }
 
-        .location-card h3 i {
-            color: #26d4a5;
-        }
-
-        .schedule-info {
-            list-style: none;
-            font-size: 13.5px;
-            color: #475467;
-        }
-
-        .schedule-info li {
-            margin-bottom: 10px;
-            display: flex;
-            justify-content: space-between;
-            border-bottom: 1px dashed #f2f4f7;
-            padding-bottom: 8px;
-        }
-
-        .schedule-info li span.day {
-            font-weight: 600;
-        }
-
-        /* SECTION: Contact Form */
-        .contact-section {
-            padding: 90px 8%;
-            background: #ffffff;
-            display: grid;
-            grid-template-columns: 1fr 1.2fr;
-            gap: 50px;
-        }
-
-        .contact-info h2 {
-            font-size: 28px;
-            color: #1d2939;
+        .location-card h4 {
+            font-size: 13px;
+            text-transform: uppercase;
+            color: #222;
+            margin-top: 5px;
             margin-bottom: 15px;
-            font-weight: 700;
-        }
-
-        .contact-info p {
-            font-size: 14px;
-            color: #475467;
-            line-height: 1.7;
-            margin-bottom: 30px;
-        }
-
-        .info-item {
+            letter-spacing: 0.5px;
             display: flex;
             align-items: center;
-            gap: 15px;
+            gap: 6px;
+            font-weight: 600;
+        }
+
+        .location-card p {
+            font-size: 13px;
+            color: #444;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .card-buttons {
+            display: flex;
+            gap: 8px;
+            margin-top: 15px;
+            flex-wrap: wrap;
+        }
+
+        .card-btn {
+            padding: 10px 16px;
+            background-color: #f4f8fb;
+            color: #333;
+            text-decoration: none;
+            font-size: 12px;
+            font-weight: 600;
+            border-radius: 25px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+            transition: all 0.3s;
+            cursor: pointer;
+            border: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .card-btn:hover {
+            background-color: #111;
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .card-btn.maps-btn {
+            background-color: transparent;
+            border: 1.5px solid #0c4a60;
+            color: #0c4a60;
+            box-shadow: none;
+        }
+
+        .card-btn.maps-btn:hover {
+            background-color: #0c4a60;
+            color: white;
+        }
+
+        /* MODAL POPUP PANDUAN PENDAFTARAN */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(17, 24, 39, 0.7);
+            align-items: center;
+            justify-content: center;
+            backdrop-filter: blur(4px);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .modal.show {
+            display: flex;
+            opacity: 1;
+        }
+
+        .modal-content {
+            background-color: #ffffff;
+            padding: 35px;
+            border-radius: 16px;
+            width: 90%;
+            max-width: 540px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+            position: relative;
+            transform: translateY(-30px);
+            transition: transform 0.3s ease;
+        }
+
+        .modal.show .modal-content {
+            transform: translateY(0);
+        }
+
+        .close-btn {
+            position: absolute;
+            right: 20px;
+            top: 15px;
+            font-size: 28px;
+            font-weight: bold;
+            color: #9ca3af;
+            cursor: pointer;
+            transition: color 0.2s;
+        }
+
+        .close-btn:hover {
+            color: #1f2937;
+        }
+
+        .modal h2 {
+            font-size: 22px;
+            color: #0c4a60;
+            font-weight: 700;
             margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .modal-step-container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .modal-step {
+            display: flex;
+            gap: 15px;
+            align-items: flex-start;
+        }
+
+        .step-number {
+            background-color: #26d4a5;
+            color: white;
+            font-weight: 700;
+            font-size: 13px;
+            width: 26px;
+            height: 26px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .step-text h4 {
             font-size: 14px;
             color: #1d2939;
+            font-weight: 600;
+            margin-bottom: 4px;
         }
 
-        .info-item i {
-            font-size: 18px;
-            color: #26d4a5;
-            background: #ebf7fd;
-            padding: 12px;
-            border-radius: 50%;
-        }
-
-        .contact-form {
-            background: #f9fafb;
-            padding: 40px;
-            border-radius: 12px;
-            border: 1px solid #eaecf0;
-        }
-
-        .form-group {
-            margin-bottom: 20px;
-        }
-
-        .form-group label {
-            display: block;
+        .step-text p {
             font-size: 13px;
-            font-weight: 600;
-            color: #344054;
-            margin-bottom: 6px;
+            color: #667085;
+            line-height: 1.5;
         }
 
-        .form-group input, .form-group textarea {
-            width: 100%;
-            padding: 12px;
-            border: 1px solid #d0d5dd;
-            border-radius: 8px;
-            font-size: 13.5px;
-            outline: none;
-            background: white;
-            transition: border-color 0.3s;
-        }
-
-        .form-group input:focus, .form-group textarea:focus {
-            border-color: #26d4a5;
-        }
-
-        .btn-submit {
-            width: 100%;
-            background: #26d4a5;
-            color: white;
-            border: none;
-            padding: 14px;
-            border-radius: 8px;
-            font-size: 14px;
-            font-weight: 600;
-            cursor: pointer;
-            box-shadow: 0 4px 12px rgba(38, 212, 165, 0.2);
-            transition: background 0.3s;
-        }
-
-        .btn-submit:hover {
-            background: #1fc094;
+        .step-text blockquote {
+            background-color: #f4f8fb;
+            border-left: 3px solid #26d4a5;
+            padding: 8px 12px;
+            margin-top: 8px;
+            font-size: 12px;
+            color: #333;
+            border-radius: 0 4px 4px 0;
+            font-style: normal;
         }
 
         /* SECTION: Footer */
@@ -502,10 +601,11 @@
             nav ul.active { display: flex; }
             nav ul li { margin: 10px 0; }
             
-            .hero-section { grid-template-columns: 1fr; text-align: center; padding: 140px 5% 50px 5%; gap: 30px; }
+            .hero-section { grid-template-columns: 1fr; text-align: center; padding: 140px 5% 40px 5%; gap: 30px; }
             .hero-img-box { text-align: center; }
             .hero-img-box img { width: 70%; }
-            .contact-section { grid-template-columns: 1fr; gap: 40px; }
+            .hero-slider-container { height: 260px; }
+            .locations-grid { grid-template-columns: 1fr; gap: 30px; }
             .footer-container { grid-template-columns: 1fr; gap: 30px; }
             .map-responsive { padding-bottom: 60%; }
         }
@@ -523,8 +623,7 @@
             <ul id="nav-list">
                 <li><a href="index.html" class="active">Home</a></li>
                 <li><a href="about.html">About Me</a></li>
-                <li><a href="#locations">Locations & Schedules</a></li>
-                <li><a href="#contact">Contact Us</a></li>
+                <li><a href="#locations">Hubungi Kami</a></li>
             </ul>
         </nav>
     </header>
@@ -536,7 +635,10 @@
             <p>Selamat datang di platform konsultasi resmi drg. Yuli Kartilla Panjaitan. Kami berkomitmen memberikan pelayanan dental modern terbaik dengan mengutamakan kenyamanan, keamanan, dan hasil yang estetis untuk kesehatan gigi dan mulut Anda.</p>
             
             <div class="hero-buttons">
-                <a href="#locations" class="btn-primary">Lihat Jadwal Praktik</a>
+                <!-- REVISI: Kembali ke Fungsi Panduan Pendaftaran -->
+                <button class="btn-primary" onclick="toggleModal(true)">
+                    <i class="fa-solid fa-book-medical" style="margin-right: 6px;"></i> Panduan Pendaftaran
+                </button>
                 <a href="CV_drg_Yuli_Kartilla_Panjaitan.pdf" class="btn-primary btn-cv" download>
                     <i class="fa-solid fa-file-pdf" style="margin-right: 8px;"></i> Download CV
                 </a>
@@ -544,6 +646,16 @@
         </div>
         <div class="hero-img-box">
             <img src="drg-yuli-hero.jpg" alt="drg. Yuli Kartilla Panjaitan" onerror="this.src='https://via.placeholder.com/450x400?text=Klinik+Gigi'">
+        </div>
+    </section>
+
+    <!-- SECTION: Bingkai Slider Klinik (Tepat di Atas Layanan) -->
+    <section class="slider-section">
+        <div class="hero-slider-container">
+            <div class="slide active" style="background-image: url('lanera-interior.jpg');"></div>
+            <div class="slide" style="background-image: url('tp-dental-luar.jpg');"></div>
+            <div class="slide" style="background-image: url('lanera-luar.jpg');"></div>
+            <div class="slide" style="background-image: url('tp-dental-pintu.jpg');"></div>
         </div>
     </section>
 
@@ -575,63 +687,104 @@
         </div>
     </section>
 
-    <!-- SECTION: Locations & Schedules -->
+    <!-- SECTION: Hubungi Kami (Berisi Alamat, Admin WA, dan Google Maps Semula) -->
     <section class="locations-section" id="locations">
-        <h2 class="section-title">Lokasi & Jadwal Praktik</h2>
-        <div class="section-subtitle">Practice Locations & Schedules</div>
+        <h2 class="section-title">Hubungi Kami</h2>
+        <div class="section-subtitle">Practice Locations & Contact Info</div>
         <div class="locations-grid">
+            
+            <!-- KLINIK 1 -->
             <div class="location-card">
-                <h3><i class="fa-solid fa-clinic-medical"></i> Lanera Dental Care</h3>
-                <p style="font-size: 13px; color: #667085; margin-bottom: 15px;">Kota Batam</p>
-                <ul class="schedule-info">
-                    <li><span class="day">Senin - Jumat</span> <span>16.00 - 21.00 WIB</span></li>
-                    <li><span class="day">Sabtu</span> <span>By Appointment</span></li>
-                    <li><span class="day">Minggu</span> <span>Tutup</span></li>
-                </ul>
+                <div>
+                    <h3>Lanera Dental Care</h3>
+                    <h4><i class="fa-regular fa-clock"></i> Senin – Sabtu: 10.00 – 16.00 WIB</h4>
+                    <p><strong>Cabang KBC:</strong> Ruko KBC Blok A3 No. 3 Batam Center, Belian, Kec. Batam Kota, Kota Batam, Kepulauan Riau 29464</p>
+                    <p><strong>Cabang Mitra Raya:</strong> Komplek No.3 Blok A, Tlk. Tering, Kec. Batam Kota, Kota Batam, Kepulauan Riau 29461</p>
+                </div>
+                <div class="card-buttons">
+                    <button class="card-btn" onclick="openWhatsApp('628121646224', 'Halo Lanera Dental Care, saya ingin membuat janji temu dengan drg. Yuli.')"><i class="fa-brands fa-whatsapp"></i> Admin 1</button>
+                    <button class="card-btn" onclick="openWhatsApp('6281225776161', 'Halo Lanera Dental Care, saya ingin bertanya tentang jadwal drg. Yuli.')"><i class="fa-brands fa-whatsapp"></i> Admin 2</button>
+                    <button class="card-btn maps-btn" onclick="window.open('https://maps.google.com/?q=Lanera+Dental+Care+Batam', '_blank')"><i class="fa-solid fa-location-dot"></i> Maps KBC</button>
+                    <button class="card-btn maps-btn" onclick="window.open('https://share.google/v10jY90e3OtJGrs5b', '_blank')"><i class="fa-solid fa-location-dot"></i> Maps Mitra Raya</button>
+                </div>
             </div>
+
+            <!-- KLINIK 2 -->
             <div class="location-card">
-                <h3><i class="fa-solid fa-user-md"></i> TP Dental</h3>
-                <p style="font-size: 13px; color: #667085; margin-bottom: 15px;">Kota Batam</p>
-                <ul class="schedule-info">
-                    <li><span class="day">Senin - Sabtu</span> <span>Sesuai Jadwal Shift</span></li>
-                    <li><span class="day">Minggu</span> <span>Urgent Only</span></li>
-                </ul>
+                <div>
+                    <h3>TP Dental</h3>
+                    <h4><i class="fa-regular fa-clock"></i> Senin – Sabtu: 16.00 – 18.30 WIB</h4>
+                    <p><strong>Alamat:</strong> Jl. Komp. Bumi Indah Blk. D No. 6, Lubuk Baja Kota, Kec. Lubuk Baja, Kota Batam, Kepulauan Riau 29444 (Belakang Bank BRI)</p>
+                </div>
+                <div class="card-buttons">
+                    <button class="card-btn" onclick="openWhatsApp('6281373091545', 'Halo TP Dental, saya ingin menjadwalkan kunjungan ke drg. Yuli sore ini.')"><i class="fa-brands fa-whatsapp"></i> Chat Admin</button>
+                    <button class="card-btn maps-btn" onclick="window.open('https://maps.google.com/?q=TP+Dental+Batam', '_blank')"><i class="fa-solid fa-location-dot"></i> Google Maps</button>
+                </div>
             </div>
+
+            <!-- KARTU INFORMASI EXTRA -->
+            <div class="location-card" style="background-color: #ebf7fd;">
+                <div>
+                    <h3>Informasi Pasien</h3>
+                    <h4><i class="fa-solid fa-circle-info"></i> Catatan Kunjungan</h4>
+                    <p>Untuk kenyamanan bersama, calon pasien disarankan melakukan konfirmasi atau booking terlebih dahulu melalui WhatsApp klinik masing-masing sebelum datang ke lokasi.</p>
+                </div>
+                <div class="card-buttons">
+                    <button class="card-btn" style="background-color: #0c4a60; color: white; width: 100%; justify-content: center;" onclick="toggleModal(true)"><i class="fa-solid fa-book-medical"></i> Panduan Booking</button>
+                </div>
+            </div>
+
         </div>
     </section>
 
-    <!-- SECTION: Contact Form -->
-    <section class="contact-section" id="contact">
-        <div class="contact-info">
-            <h2>Hubungi Kami</h2>
-            <p>Punya pertanyaan seputar keluhan gigi atau ingin membuat janji temu? Silakan hubungi tim administrasi kami atau isi formulir di samping.</p>
-            <div class="info-item">
-                <i class="fa-solid fa-envelope"></i>
-                <span>info@drgyulipanjaitan.com</span>
-            </div>
-            <div class="info-item">
-                <i class="fa-solid fa-phone"></i>
-                <span>+62 812-XXXX-XXXX (Batam)</span>
+    <!-- MODAL POPUP BOX PANDUAN PENDAFTARAN -->
+    <div id="panduanModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="toggleModal(false)">&times;</span>
+            <h2><i class="fa-solid fa-book-medical" style="color: #26d4a5;"></i> Panduan Pendaftaran</h2>
+            <div style="border-top: 1px solid #f0f4f8; margin-bottom: 20px;"></div>
+            
+            <div class="modal-step-container">
+                <div class="modal-step">
+                    <div class="step-number">1</div>
+                    <div class="step-text">
+                        <h4>Pilih Lokasi & Jadwal Praktik</h4>
+                        <p>Tentukan klinik pilihan Anda (Lanera KBC, Lanera Mitra Raya, atau TP Dental) berdasarkan lokasi terdekat serta jam operasional masuk drg. Yuli.</p>
+                    </div>
+                </div>
+                
+                <div class="modal-step">
+                    <div class="step-number">2</div>
+                    <div class="step-text">
+                        <h4>Hubungi Kontak Admin</h4>
+                        <p>Klik tombol <strong>Admin</strong> atau <strong>Chat Admin</strong> pada kartu klinik yang dipilih untuk langsung dialihkan ke ruang obrolan WhatsApp.</p>
+                    </div>
+                </div>
+
+                <div class="modal-step">
+                    <div class="step-number">3</div>
+                    <div class="step-text">
+                        <h4>Kirimkan Format Booking</h4>
+                        <p>Kirim pesan otomatis yang tersedia atau gunakan pola teks mandiri berikut agar proses input jadwal berjalan lebih cepat:</p>
+                        <blockquote>
+                            • <strong>Nama Pasien:</strong> <br>
+                            • <strong>Klinik Tujuan:</strong> (KBC / Mitra Raya / TP Dental)<br>
+                            • <strong>Hari & Tanggal Kunjungan:</strong> <br>
+                            • <strong>Keluhan / Jenis Perawatan:</strong>
+                        </blockquote>
+                    </div>
+                </div>
+
+                <div class="modal-step">
+                    <div class="step-number">4</div>
+                    <div class="step-text">
+                        <h4>Tunggu Konfirmasi Slot</h4>
+                        <p>Admin klinik akan memverifikasi ketersediaan jam kunjungan Anda. Setelah disetujui, Anda tinggal datang sesuai jadwal aman tersebut.</p>
+                    </div>
+                </div>
             </div>
         </div>
-        <div class="contact-form">
-            <form action="#">
-                <div class="form-group">
-                    <label for="name">Nama Lengkap</label>
-                    <input type="text" id="name" placeholder="Masukkan nama Anda" required>
-                </div>
-                <div class="form-group">
-                    <label for="email">Alamat Email</label>
-                    <input type="email" id="email" placeholder="Masukkan email Anda" required>
-                </div>
-                <div class="form-group">
-                    <label for="message">Pesan / Keluhan</label>
-                    <textarea id="message" rows="4" placeholder="Tuliskan pesan atau keluhan gigi Anda..." required></textarea>
-                </div>
-                <button type="submit" class="btn-submit">Kirim Pesan</button>
-            </form>
-        </div>
-    </section>
+    </div>
 
     <!-- FOOTER -->
     <footer>
@@ -650,7 +803,6 @@
                 <ul>
                     <li><a href="index.html">Home</a></li>
                     <li><a href="about.html">About Me</a></li>
-                    <li><a href="#locations">Locations & Schedules</a></li>
                 </ul>
             </div>
 
@@ -663,12 +815,14 @@
         </div>
 
         <div class="footer-bottom">
-            <p>© 2026 drg. Yuli Kartilla Panjaitan. All Rights Reserved.</p>
+            <p>&copy; 2026 drg. Yuli Kartilla Panjaitan. All Rights Reserved.</p>
             <p>Designed with <i class="fa-solid fa-heart" style="color: #e11d48;"></i> in Batam</p>
         </div>
     </footer>
 
+    <!-- JavaScript Interaksi -->
     <script>
+        // STICKY NAVBAR LOGIC
         const header = document.querySelector('header');
         function checkScroll() {
             const scrollTop = window.scrollY || window.pageYOffset || document.documentElement.scrollTop;
@@ -681,11 +835,50 @@
         window.addEventListener('scroll', checkScroll);
         window.addEventListener('load', checkScroll);
 
+        function openWhatsApp(nomor, pesan) {
+            const url = `https://wa.me/${nomor}?text=${encodeURIComponent(pesan)}`;
+            window.open(url, '_blank');
+        }
+
+        // POPUP TOGGLE FUNCTION
+        function toggleModal(show) {
+            const modal = document.getElementById('panduanModal');
+            if (show) {
+                modal.style.display = 'flex';
+                setTimeout(() => modal.classList.add('show'), 10);
+            } else {
+                modal.classList.remove('show');
+                setTimeout(() => modal.style.display = 'none', 300);
+            }
+        }
+
+        window.onclick = function(event) {
+            const modal = document.getElementById('panduanModal');
+            if (event.target === modal) {
+                toggleModal(false);
+            }
+        }
+
         const mobileMenu = document.getElementById('mobile-menu');
         const navList = document.getElementById('nav-list');
         mobileMenu.addEventListener('click', () => {
             navList.classList.toggle('active');
         });
+
+        // AMAN AUTOMATIC IMAGE SLIDER
+        const slides = document.querySelectorAll('.slide');
+        let currentSlide = 0;
+
+        function nextSlide() {
+            if (slides.length === 0) return;
+            slides[currentSlide].classList.remove('active');
+            currentSlide = (currentSlide + 1) % slides.length;
+            slides[currentSlide].classList.add('active');
+        }
+
+        if (slides.length > 0) {
+            setInterval(nextSlide, 4000);
+        }
     </script>
 </body>
 </html>
