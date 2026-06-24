@@ -4,7 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>drg. Yuli Kartilla Panjaitan - Lanera Dental Care & TP Dental</title>
+    <!-- Font Awesome untuk Ikon -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     
     <style>
@@ -161,16 +163,35 @@
             transform: translateY(-5px);
         }
 
-        /* Hero Image */
-        .hero-image {
+        /* Hero Image Slider Container */
+        .hero-slider-container {
             position: absolute;
             right: 8%;
-            bottom: 0;
-            width: 45%;
-            height: 90%;
-            background: url('https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&q=80&w=800') no-repeat center bottom;
-            background-size: contain;
+            bottom: 40px;
+            width: 42%;
+            height: 75%;
             z-index: 1;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+        }
+
+        .slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover; /* Otomatis resize & auto-crop proporsional */
+            opacity: 0;
+            transition: opacity 0.8s ease-in-out;
+        }
+
+        /* Slide yang aktif akan muncul */
+        .slide.active {
+            opacity: 1;
         }
 
         /* Info Cards Section */
@@ -310,7 +331,7 @@
             .nav-socials { margin-left: 0; padding-left: 0; border-left: none; margin-top: 10px; }
             .hero { padding: 120px 5% 50px 5%; background: #ebf7fd; min-height: auto; }
             .hero-content h1 { font-size: 34px; }
-            .hero-image { display: none; }
+            .hero-slider-container { display: none; } /* Tersembunyi di mobile agar teks terbaca rapi */
             .info-section { grid-template-columns: 1fr; padding: 20px 5%; margin-top: 20px; }
             .side-menu { display: none; }
         }
@@ -318,6 +339,7 @@
 </head>
 <body>
 
+    <!-- Header / Navigasi -->
     <header>
         <div class="logo">
             <i class="fa-solid fa-tooth"></i> drg. Yuli Kartilla P.
@@ -336,6 +358,7 @@
         </nav>
     </header>
 
+    <!-- Hero Section -->
     <section class="hero">
         <div class="hero-content">
             <h1>Senyum Sehat & Menawan Bersama drg. Yuli</h1>
@@ -346,11 +369,20 @@
                 <div class="icon-box" title="Kesehatan Anak"><i class="fa-solid fa-child"></i></div>
             </div>
         </div>
-        <div class="hero-image"></div>
+        
+        <!-- Hero Image Slider Ter-update dengan Foto Asli -->
+        <div class="hero-slider-container">
+            <div class="slide active" style="background-image: url('lanera-1.jpg');"></div>
+            <div class="slide" style="background-image: url('lanera-2.jpg');"></div>
+            <div class="slide" style="background-image: url('tp-dental-1.jpg');"></div>
+            <div class="slide" style="background-image: url('tp-dental-2.jpg');"></div>
+        </div>
     </section>
 
+    <!-- Info Cards Section -->
     <section class="info-section">
         
+        <!-- KLINIK 1: Lanera Dental Care -->
         <div class="card">
             <div>
                 <h2>Lanera Dental Care</h2>
@@ -364,6 +396,7 @@
             </div>
         </div>
 
+        <!-- KLINIK 2: TP Dental -->
         <div class="card">
             <div>
                 <h2>TP Dental</h2>
@@ -376,6 +409,7 @@
             </div>
         </div>
 
+        <!-- CARD 3: Informasi Umum Pasien -->
         <div class="card">
             <div>
                 <h2>Informasi Pasien</h2>
@@ -389,11 +423,13 @@
 
     </section>
 
+    <!-- Floating Side Menu -->
     <div class="side-menu">
         <a href="https://www.instagram.com/laneradentalcare/?hl=id" target="_blank" title="Instagram Lanera Care"><i class="fa-brands fa-instagram"></i></a>
         <a href="https://www.instagram.com/tpdentalbatam/" target="_blank" title="Instagram TP Dental"><i class="fa-brands fa-instagram"></i></a>
     </div>
 
+    <!-- JavaScript Interaksi -->
     <script>
         function openWhatsApp(nomor, pesan) {
             const url = `https://wa.me/${nomor}?text=${encodeURIComponent(pesan)}`;
@@ -407,6 +443,19 @@
         mobileMenu.addEventListener('click', () => {
             navList.classList.toggle('active');
         });
+
+        // Script Logika Slider Otomatis
+        const slides = document.querySelectorAll('.slide');
+        let currentSlide = 0;
+
+        function nextSlide() {
+            slides[currentSlide].classList.remove('active');
+            currentSlide = (currentSlide + 1) % slides.length;
+            slides[currentSlide].classList.add('active');
+        }
+
+        // Ganti slide otomatis setiap 4 detik
+        setInterval(nextSlide, 4000);
     </script>
 </body>
 </html>
