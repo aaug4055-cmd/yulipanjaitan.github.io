@@ -4,11 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Me - drg. Yuli Kartilla Panjaitan</title>
-    <!-- FAVICON: Data URI SVG Gigi Hijau Mint (Aman & Bebas Blokir Browser) -->
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Cpath fill='%2326d4a5' d='M416 112c-35.3 0-64 28.7-64 64v51.2c0 23.4-12.2 44.9-32.3 56.8L272 312.6l-47.7-28.6c-20.1-12-32.3-33.5-32.3-56.8V176c0-35.3-28.7-64-64-64S64 140.7 64 176c0 86.8 52.3 162.7 128 193.3V432c0 17.7 14.3 32 32 32h64c17.7 0 32-14.3 32-32V369.3c75.7-30.6 128-106.5 128-193.3c0-35.3-28.7-64-64-64z'/%3E%3C/svg%3E">
-    <!-- Font Awesome untuk Ikon -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     
     <style>
@@ -26,12 +23,12 @@
             overflow-x: hidden;
         }
 
-        /* REVISI: Navigation Bar Rapat Ditengah & Simetris */
+        /* REVISI HEADER INTERAKTIF: Rapat Ditengah & Simetris */
         header {
             display: flex;
-            justify-content: center; /* Membuat isi konten berkumpul di tengah */
+            justify-content: center; 
             align-items: center;
-            gap: 50px; /* Jarak antara Logo dan Menu Navigasi */
+            gap: 50px; 
             padding: 22px 5%;
             background: #f8fafc;
             position: fixed;
@@ -41,33 +38,54 @@
             left: 0;
             border-bottom: 1px solid #e2e8f0;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.02);
-            transition: all 0.3s ease-in-out;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
         header.scrolled {
             padding: 14px 5%;
             background: #f1f5f9;
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
-            gap: 40px; /* Merapat sedikit saat di-scroll agar tampak dinamis */
+            gap: 40px; 
         }
 
+        /* Teks Logo drg. diubah menjadi huruf kecil cerdas */
         .logo {
             display: flex;
             align-items: center;
             font-weight: 700;
             font-size: 19px;
             color: #1d2939;
-            text-transform: uppercase;
             letter-spacing: 0.5px;
             text-decoration: none;
             cursor: pointer;
             flex-shrink: 0;
+            transition: transform 0.3s ease;
+        }
+
+        .logo span.small-title {
+            text-transform: lowercase; 
+            font-weight: 600;
+        }
+
+        .logo span.main-title {
+            text-transform: uppercase; 
+            margin-left: 4px;
         }
 
         .logo i {
             color: #26d4a5;
             margin-right: 10px;
             font-size: 22px;
+            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .logo:hover {
+            transform: scale(1.02);
+        }
+
+        .logo:hover i {
+            transform: rotate(20deg) scale(1.1);
+            color: #1fc094;
         }
 
         nav {
@@ -85,16 +103,41 @@
             margin: 0 16px;
         }
 
+        /* INTERAKTIF HEADER: Menu Navigasi Bergaris Bawah Mengalir */
         nav ul li a {
             text-decoration: none;
             color: #475467;
             font-size: 14px;
             font-weight: 600;
-            transition: color 0.3s;
+            position: relative;
+            padding: 6px 0;
+            transition: color 0.3s ease;
             white-space: nowrap;
         }
 
-        nav ul li a:hover, nav ul li a.active {
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            transform: scaleX(0);
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: #26d4a5;
+            transform-origin: bottom right;
+            transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        nav ul li a:hover {
+            color: #26d4a5;
+        }
+
+        nav ul li a:hover::after, nav ul li a.active::after {
+            transform: scaleX(1);
+            transform-origin: bottom left;
+        }
+
+        nav ul li a.active {
             color: #26d4a5;
         }
 
@@ -102,6 +145,12 @@
             display: none;
             font-size: 24px;
             cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .menu-toggle:hover {
+            transform: scale(1.1);
+            color: #26d4a5;
         }
 
         /* SECTION: Tentang Dokter */
@@ -424,10 +473,9 @@
             color: #26d4a5;
         }
 
-        /* Responsive Breakpoint Mobile Layout Header */
         @media (max-width: 992px) {
             header { 
-                justify-content: space-between; /* Kembali ke kiri-kanan pada mobile demi fungsionalitas */
+                justify-content: space-between; 
                 padding: 16px 5%; 
                 background: #f8fafc !important; 
                 position: fixed; 
@@ -458,10 +506,11 @@
 </head>
 <body>
 
-    <!-- Header / Navigasi (Centered Simetris) -->
     <header>
         <a href="about.html" class="logo">
-            <i class="fa-solid fa-tooth"></i> drg. YULI PANJAITAN
+            <i class="fa-solid fa-tooth"></i>
+            <span class="small-title">drg.</span>
+            <span class="main-title">YULI PANJAITAN</span>
         </a>
         <nav>
             <div class="menu-toggle" id="mobile-menu"><i class="fa-solid fa-bars"></i></div>
@@ -474,7 +523,6 @@
         </nav>
     </header>
 
-    <!-- SECTION: Tentang Dokter -->
     <section class="about-section">
         <div class="about-img-box">
             <img src="drg-yuli.jpg" alt="Foto drg. Yuli Kartilla Panjaitan" onerror="this.src='https://via.placeholder.com/400x500?text=Foto+drg.+Yuli'">
@@ -490,10 +538,9 @@
                     <i class="fa-solid fa-briefcase"></i> Portofolio
                 </a>
                 
-                <p class="desc">Saya adalah seorang dokter gigi profesional yang memberikan perawatan kesehatan gigi dan mulut dengan berfokus pada kenyamanan serta kepuasan pasien, saya aktif menerapkan standar klinis kedokteran gigi modern yang aman dan solutif.</p>
+                <p class="desc">Saya adalah seorang dokter gigi profesional yang memberikan perawatan kesehatan gigi and mulut dengan berfokus pada kenyamanan serta kepuasan pasien, saya aktif menerapkan standar klinis kedokteran gigi modern yang aman dan solutif.</p>
             </div>
             
-            <!-- KEAHLIAN & LAYANAN MEDIS -->
             <div class="skills-title-main">Keahlian & Layanan Medis</div>
             <div class="skills-grid-layout">
                 <div class="skill-card-box">
@@ -538,7 +585,6 @@
                 </div>
             </div>
             
-            <!-- RIWAYAT & PENGALAMAN -->
             <div class="history-grid">
                 <div class="history-block">
                     <h3><i class="fa-solid fa-graduation-cap"></i> Riwayat Pendidikan</h3>
@@ -561,7 +607,6 @@
         </div>
     </section>
 
-    <!-- FOOTER -->
     <footer>
         <div class="footer-container">
             <div class="footer-brand">
@@ -585,7 +630,7 @@
         </div>
 
         <div class="footer-bottom">
-            <p>&copy; 2026 drg. Yuli Kartilla Panjaitan. All Rights Reserved.</p>
+            <p>© 2026 drg. Yuli Kartilla Panjaitan. All Rights Reserved.</p>
             <p>Designed with <i class="fa-solid fa-heart" style="color: #e11d48;"></i> in Batam</p>
         </div>
     </footer>
