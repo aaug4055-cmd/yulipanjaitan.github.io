@@ -100,7 +100,7 @@
 
         /* SECTION: Tentang Dokter */
         .about-section {
-            padding: 160px 8% 90px 8%;
+            padding: 160px 8% 40px 8%;
             background-color: #ffffff;
             display: grid;
             grid-template-columns: 1fr 1.5fr;
@@ -138,7 +138,6 @@
             margin-bottom: 15px;
         }
 
-        /* Tombol Portofolio Premium */
         .btn-portfolio {
             display: inline-flex;
             align-items: center;
@@ -166,35 +165,6 @@
             color: #555;
             line-height: 1.7;
             margin-bottom: 25px;
-        }
-
-        .skills-title {
-            font-size: 16px;
-            font-weight: 700;
-            color: #0c4a60;
-            margin-bottom: 12px;
-        }
-
-        .skills-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            margin-bottom: 35px;
-        }
-
-        .skill-tag {
-            background-color: #ebf7fd;
-            color: #0c4a60;
-            padding: 8px 16px;
-            border-radius: 20px;
-            font-size: 13px;
-            font-weight: 600;
-            transition: all 0.3s;
-        }
-
-        .skill-tag:hover {
-            background-color: #26d4a5;
-            color: white;
         }
 
         .history-grid {
@@ -240,6 +210,70 @@
             left: 0;
             top: -2px;
             font-weight: bold;
+        }
+
+        /* SECTION: Keahlian & Layanan Medis (DESAIN SINKRON DENGAN INDEX) */
+        .skills-section-box {
+            padding: 40px 8% 90px 8%;
+            background: #ffffff;
+        }
+
+        .skills-title-main {
+            font-size: 22px;
+            color: #1d2939;
+            font-weight: 700;
+            margin-bottom: 30px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .skills-title-main::after {
+            content: "";
+            flex-grow: 1;
+            height: 2px;
+            background-color: #f0f4f8;
+        }
+
+        .skills-grid-layout {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 25px;
+        }
+
+        .skill-card-box {
+            background: #ffffff;
+            padding: 30px 22px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+            border: 1px solid #f2f4f7;
+            transition: all 0.3s;
+        }
+
+        .skill-card-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            border-color: #26d4a5;
+        }
+
+        .skill-card-icon {
+            font-size: 26px;
+            color: #26d4a5;
+            margin-bottom: 15px;
+            display: inline-block;
+        }
+
+        .skill-card-box h4 {
+            font-size: 15px;
+            color: #1d2939;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .skill-card-box p {
+            font-size: 12.5px;
+            color: #667085;
+            line-height: 1.5;
         }
 
         /* SECTION: Footer */
@@ -331,13 +365,14 @@
             nav ul li { margin: 10px 0; }
             .about-section { grid-template-columns: 1fr; gap: 40px; padding: 130px 5% 40px 5%; }
             .history-grid { grid-template-columns: 1fr; gap: 25px; }
+            .skills-section-box { padding: 20px 5% 80px 5%; }
             .footer-container { grid-template-columns: 1fr; gap: 30px; }
         }
     </style>
 </head>
 <body>
 
-    <!-- Header / Navigasi (Logo diarahkan ke about.html) -->
+    <!-- Header / Navigasi -->
     <header>
         <a href="about.html" class="logo">
             <i class="fa-solid fa-tooth"></i> drg. YULI PANJAITAN
@@ -363,23 +398,12 @@
             <h2>drg. Yuli Kartilla Panjaitan</h2>
             <div class="subtitle">Dokter Gigi Praktisi</div>
             
-            <!-- REVISI: Tombol Portofolio mengarah ke Instagram Anda -->
             <a href="https://www.instagram.com/drg.yuli?igsh=MXcycHk3Z3JtbWp4Mw==" target="_blank" class="btn-portfolio">
                 <i class="fa-solid fa-briefcase"></i> Portofolio
             </a>
             
-            <p>Saya adalah seorang dokter gigi profesional yang berdedikasi tinggi dalam memberikan perawatan kesehatan gigi dan mulut bagi masyarakat. Berfokus pada kenyamanan serta kepuasan pasien, saya aktif menerapkan standar klinis kedokteran gigi modern yang aman dan solutif.</p>
-            
-            <div class="skills-title">Keahlian & Layanan Medis:</div>
-            <div class="skills-container">
-                <div class="skill-tag">Bleaching (Pemutihan Gigi)</div>
-                <div class="skill-tag">Scaling (Pembersihan Karang)</div>
-                <div class="skill-tag">Penambalan Estetik</div>
-                <div class="skill-tag">Perawatan Saluran Akar</div>
-                <div class="skill-tag">Pencabutan Gigi</div>
-                <div class="skill-tag">Gigi Tiruan (Palsu)</div>
-                <div class="skill-tag">Pencegahan Gigi Berlubang Anak</div>
-            </div>
+            <!-- REVISI: Deskripsi yang Diperbarui -->
+            <p>Saya adalah seorang dokter gigi profesional yang memberikan perawatan kesehatan gigi dan mulut dengan berfokus pada kenyamanan serta kepuasan pasien, saya aktif menerapkan standar klinis kedokteran gigi modern yang aman dan solutif.</p>
             
             <div class="history-grid">
                 <div class="history-block">
@@ -393,11 +417,60 @@
                 <div class="history-block">
                     <h3><i class="fa-solid fa-briefcase"></i> Pengalaman Praktik</h3>
                     <ul class="history-list">
-                        <li class="history-item">Dokter Gigi Praktisi di Vera Dental Care (Medan, Batam)</li>
+                        <!-- REVISI: Perubahan Riwayat Jabatan Klinik -->
+                        <li class="history-item">Dokter Gigi Praktisi di Vera Dental Care (2022 s.d. 2025, Medan)</li>
                         <li class="history-item">Dokter Gigi Praktisi di Lanera Dental Care & TP Dental (Batam)</li>
-                        <li class="history-item">Memiliki pengalaman praktis (5 tahun experience) dalam bidang Dentistry hingga sekarang di berbagai klinik Medan dan Batam</li>
+                        <!-- REVISI: Perubahan Lama Pengalaman Kerja -->
+                        <li class="history-item">Memiliki pengalaman praktis (lebih dari 5 tahun experience) dalam bidang Dentistry hingga sekarang</li>
                     </ul>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION: Keahlian & Layanan Medis (REVISI GRID MIRIP INDEX) -->
+    <section class="skills-section-box">
+        <div class="skills-title-main">Keahlian & Layanan Medis</div>
+        <div class="skills-grid-layout">
+            <div class="skill-card-box">
+                <i class="fa-solid fa-牙齿 skill-card-icon"><span style="font-family: 'Font Awesome 6 Free'; font-weight: 900;">&#xf5cf;</span></i>
+                <h4>Pemasangan Behel (Ortodonti)</h4>
+                <p>Koreksi struktur rahang dan susunan gigi yang tidak rata demi fungsi kunyah yang maksimal serta estetika wajah.</p>
+            </div>
+            <div class="skill-card-box">
+                <i class="fa-solid fa-wand-magic-sparkles skill-card-icon"></i>
+                <h4>Bleaching (Pemutihan Gigi)</h4>
+                <p>Prosedur pencerahan warna gigi secara aman untuk mengembalikan kilau putih alami senyum Anda.</p>
+            </div>
+            <div class="skill-card-box">
+                <i class="fa-solid fa-shield-halved skill-card-icon"></i>
+                <h4>Scaling (Pembersihan Karang)</h4>
+                <p>Pembersihan plak dan karang gigi keras guna menghindari risiko periodontitis dan bau mulut kronis.</p>
+            </div>
+            <div class="skill-card-box">
+                <i class="fa-solid fa-tooth skill-card-icon"></i>
+                <h4>Penambalan Estetik</h4>
+                <p>Restorasi area karies gigi menggunakan resin komposit sewarna asli dengan teknik pengerjaan presisi.</p>
+            </div>
+            <div class="skill-card-box">
+                <i class="fa-solid fa-heart-pulse skill-card-icon"></i>
+                <h4>Perawatan Saluran Akar</h4>
+                <p>Terapi endodontik khusus untuk mengatasi infeksi pulpa mendalam tanpa perlu melakukan pencabutan gigi.</p>
+            </div>
+            <div class="skill-card-box">
+                <i class="fa-solid fa-scissors skill-card-icon"></i>
+                <h4>Pencabutan Gigi</h4>
+                <p>Tindakan pembedahan minor pelepasan elemen gigi yang sudah rusak parah atau impaksi dengan anestesi lokal.</p>
+            </div>
+            <div class="skill-card-box">
+                <i class="fa-solid fa-cubes skill-card-icon"></i>
+                <h4>Gigi Tiruan (Palsu)</h4>
+                <p>Pembuatan protesa gigi lepasan maupun cekat untuk menggantikan fungsi fonetik dan estetika gigi yang tanggal.</p>
+            </div>
+            <div class="skill-card-box">
+                <i class="fa-solid fa-child skill-card-icon"></i>
+                <h4>Dental Anak (Pedodonti)</h4>
+                <p>Pencegahan dini gigi berlubang pada anak-anak melalui pendekatan perawatan yang ramah, nyaman, dan edukatif.</p>
             </div>
         </div>
     </section>
