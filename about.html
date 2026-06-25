@@ -12,14 +12,13 @@
     <meta property="og:type" content="website">
 
     <!-- FAVICON: Data URI SVG Gigi Hijau Mint -->
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Cpath fill='%2326d4a5' d='M416 112c-35.3 0-64 28.7-64 64v51.2c0 23.4-12.2 44.9-32.3 56.8L272 312.6l-47.7-28.6c-20.1-12-32.3-33.5-32.3-56.8V176c0-35.3-28.7-64-64-64S64 140.7 64 176c0 86.8 52.3 162.7 128 193.3V432c0 17.7 14.3 32 32 32h64c17.7 0 32-14.3 32-32V369.3c75.7-30.6 128-106.5 128-193.3c0-35.3-28.7-64-64-64z'/%3E%3C/svg%3E">
+    <link rel="icon" type="image/xml+svg" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Cpath fill='%2326d4a5' d='M416 112c-35.3 0-64 28.7-64 64v51.2c0 23.4-12.2 44.9-32.3 56.8L272 312.6l-47.7-28.6c-20.1-12-32.3-33.5-32.3-56.8V176c0-35.3-28.7-64-64-64S64 140.7 64 176c0 86.8 52.3 162.7 128 193.3V432c0 17.7 14.3 32 32 32h64c17.7 0 32-14.3 32-32V369.3c75.7-30.6 128-106.5 128-193.3c0-35.3-28.7-64-64-64z'/%3E%3C/svg%3E">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; scroll-behavior: smooth; }
         
-        /* MODERN TRANSITION: Dasar Opacity Efek Pindah Halaman */
         body { 
             background-color: #ffffff; 
             color: #333; 
@@ -129,7 +128,7 @@
                 <p class="desc">Saya adalah seorang dokter gigi profesional yang memberikan perawatan kesehatan gigi dan mulut dengan berfokus pada kenyamanan serta kepuasan pasien, saya aktif menerapkan standar klinis kedokteran gigi modern yang aman dan solutif.</p>
             </div>
             
-            <!-- Keahlian -->
+            <!-- Keahlian & Layanan Medis (KEMBALI LENGKAP 8 KARTU) -->
             <div class="skills-title-main">Keahlian & Layanan Medis</div>
             <div class="skills-grid-layout">
                 <div class="skill-card-box">
@@ -152,6 +151,26 @@
                     <h4>Penambalan Estetik</h4>
                     <p>Restorasi area karies gigi menggunakan resin komposit sewarna asli dengan teknik pengerjaan presisi.</p>
                 </div>
+                <div class="skill-card-box">
+                    <i class="fa-solid fa-heart-pulse skill-card-icon"></i>
+                    <h4>Perawatan Saluran Akar</h4>
+                    <p>Terapi endodontik khusus untuk mengatasi infeksi pulpa mendalam tanpa perlu melakukan pencabutan gigi.</p>
+                </div>
+                <div class="skill-card-box">
+                    <i class="fa-solid fa-scissors skill-card-icon"></i>
+                    <h4>Pencabutan Gigi</h4>
+                    <p>Tindakan pembedahan minor pelepasan elemen gigi yang sudah rusak parah dengan anestesi lokal.</p>
+                </div>
+                <div class="skill-card-box">
+                    <i class="fa-solid fa-cubes skill-card-icon"></i>
+                    <h4>Gigi Tiruan (Palsu)</h4>
+                    <p>Pembuatan protesa gigi lepasan maupun cekat untuk menggantikan fungsi fonetik dan estetika gigi yang tanggal.</p>
+                </div>
+                <div class="skill-card-box">
+                    <i class="fa-solid fa-child skill-card-icon"></i>
+                    <h4>Dental Anak (Pedodonti)</h4>
+                    <p>Pencegahan dini gigi berlubang pada anak-anak melalui pendekatan perawatan yang ramah, nyaman, dan edukatif.</p>
+                </div>
             </div>
             
             <!-- Riwayat -->
@@ -168,6 +187,7 @@
                     <ul class="history-list">
                         <li class="history-item">Dokter Gigi Praktisi di Vera Dental Care (2022 s.d. 2025, Medan)</li>
                         <li class="history-item">Dokter Gigi Praktisi di Lanera Dental Care & TP Dental (Batam)</li>
+                        <li class="history-item">Memiliki pengalaman praktis (lebih dari 5 tahun experience) dalam bidang Dentistry hingga sekarang</li>
                     </ul>
                 </div>
             </div>
@@ -184,12 +204,10 @@
     </footer>
 
     <script>
-        // Trigger Efek Masuk Lembut Fade-In Saat Dom Siap
         document.addEventListener('DOMContentLoaded', () => {
             document.body.style.opacity = '1';
         });
 
-        // Interseptor Link Internal untuk Efek Fade-Out Modern di Layar HP Pasien
         document.querySelectorAll('a').forEach(link => {
             link.addEventListener('click', function(e) {
                 const href = this.getAttribute('href');
