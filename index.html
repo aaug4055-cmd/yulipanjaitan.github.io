@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home - drg. Yuli Kartilla Panjaitan</title>
+    <!-- FAVICON: Ikon Gigi di Tab Browser -->
+    <link rel="icon" type="image/png" href="https://cdn-icons-png.flaticon.com/512/2921/2921233.png">
     <!-- Font Awesome untuk Ikon -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Google Fonts -->
@@ -138,6 +140,37 @@
             justify-content: center;
         }
 
+        .btn-primary {
+            display: inline-block;
+            background-color: #26d4a5;
+            color: white;
+            padding: 14px 28px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            box-shadow: 0 5px 15px rgba(38, 212, 165, 0.3);
+            transition: all 0.3s;
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-primary:hover {
+            background-color: #1fc094;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(38, 212, 165, 0.4);
+        }
+
+        .btn-about {
+            background-color: #1d2939; 
+            box-shadow: 0 5px 15px rgba(29, 41, 57, 0.15);
+        }
+
+        .btn-about:hover {
+            background-color: #111827;
+            box-shadow: 0 8px 20px rgba(29, 41, 57, 0.3);
+        }
+
         /* SECTION: Slider Gambar Klinik Teroptimasi */
         .slider-section {
             padding: 40px 8% 20px 8%;
@@ -258,7 +291,7 @@
             line-height: 1.6;
         }
 
-        /* REVISI DESAIN: Locations & Schedules INTERAKTIF SEPERTI MEDICAL SERVICES */
+        /* SECTION: Locations & Schedules */
         .locations-section {
             padding: 60px 8% 90px 8%;
             background: #f9fafb;
@@ -285,7 +318,6 @@
             justify-content: space-between;
         }
 
-        /* Efek interaktif saat hover kartu lokasi */
         .location-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 10px 30px rgba(0,0,0,0.08);
@@ -625,7 +657,7 @@
     <section class="hero-section">
         <div class="hero-text">
             <h1>Healthy Teeth, <span>Beautiful Smile</span></h1>
-            <p>Selamat datang di platform konsultasi resmi drg. Yuli Kartilla Panjaitan. Kami berkomitmen memberikan pelayanan dental modern terbaik dengan mengutamakan kenyamanan, keamanan, dan hasil yang estetis untuk kesehatan gigi dan mulut Anda.</p>
+            <p>Selamat datang di platform konsultasi resmi drg. Yuli Kartilla Panjaitan. Kami berkomitmen memberikan pelayanan dental modern terbaik dengan mengutamakan kenyamanan, keamanan, dan hasil yang estetis untuk kesehatan gigi and mulut Anda.</p>
             
             <div class="hero-buttons">
                 <button class="btn-primary" onclick="toggleModal(true)">
@@ -684,7 +716,7 @@
         </div>
     </section>
 
-    <!-- SECTION: Locations & Schedules (UPDATE DESAIN GRID INTERAKTIF) -->
+    <!-- SECTION: Locations & Schedules -->
     <section class="locations-section" id="locations">
         <h2 class="section-title">Locations & Schedules</h2>
         <div class="section-subtitle">Practice Locations & Contact Info</div>
@@ -767,7 +799,7 @@
                     <div class="step-text">
                         <h4>Kirimkan Format Booking</h4>
                         <p>Kirim pesan otomatis yang tersedia atau gunakan pola teks mandiri berikut agar proses input jadwal berjalan lebih cepat:</p>
-                        <blockquote>
+                        blockquote>
                             • <strong>Nama Pasien:</strong> <br>
                             • <strong>Klinik Tujuan:</strong> (KBC / Mitra Raya / TP Dental)<br>
                             • <strong>Hari & Tanggal Kunjungan:</strong> <br>
