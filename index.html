@@ -4,8 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home - drg. Yuli Kartilla Panjaitan</title>
+    
+    <!-- BARU: SEO & Social Media Share Meta Tags (Poin 3) -->
+    <meta name="description" content="Layanan konsultasi dan perawatan gigi profesional drg. Yuli Kartilla Panjaitan di Batam (Lanera Dental Care & TP Dental).">
+    <meta property="og:title" content="drg. Yuli Kartilla Panjaitan - Dokter Gigi Batam">
+    <meta property="og:description" content="Healthy Teeth, Beautiful Smile. Layanan dental modern terbaik di Kota Batam.">
+    <meta property="og:type" content="website">
+    
+    <!-- FAVICON: Data URI SVG Gigi Hijau Mint (Aman & Bebas Blokir Browser) -->
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Cpath fill='%2326d4a5' d='M416 112c-35.3 0-64 28.7-64 64v51.2c0 23.4-12.2 44.9-32.3 56.8L272 312.6l-47.7-28.6c-20.1-12-32.3-33.5-32.3-56.8V176c0-35.3-28.7-64-64-64S64 140.7 64 176c0 86.8 52.3 162.7 128 193.3V432c0 17.7 14.3 32 32 32h64c17.7 0 32-14.3 32-32V369.3c75.7-30.6 128-106.5 128-193.3c0-35.3-28.7-64-64-64z'/%3E%3C/svg%3E">
+    <!-- Font Awesome untuk Ikon -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     
     <style>
@@ -35,7 +45,7 @@
             }
         }
 
-        /* REVISI HEADER INTERAKTIF: Rapat Ditengah & Simetris */
+        /* HEADER INTERAKTIF: Rapat Ditengah & Simetris */
         header {
             display: flex;
             justify-content: center; 
@@ -60,7 +70,6 @@
             gap: 40px; 
         }
 
-        /* Teks Logo drg. diubah menjadi huruf kecil cerdas */
         .logo {
             display: flex;
             align-items: center;
@@ -75,12 +84,12 @@
         }
 
         .logo span.small-title {
-            text-transform: lowercase; /* Memastikan drg huruf kecil */
+            text-transform: lowercase; 
             font-weight: 600;
         }
 
         .logo span.main-title {
-            text-transform: uppercase; /* Memastikan nama tetap kapital anggun */
+            text-transform: uppercase; 
             margin-left: 4px;
         }
 
@@ -91,7 +100,6 @@
             transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
 
-        /* INTERAKTIF HEADER: Efek Putar Gigi & Glow saat Disentuh */
         .logo:hover {
             transform: scale(1.02);
         }
@@ -116,7 +124,6 @@
             margin: 0 16px;
         }
 
-        /* INTERAKTIF HEADER: Menu Navigasi Bergaris Bawah Mengalir */
         nav ul li a {
             text-decoration: none;
             color: #475467;
@@ -261,7 +268,7 @@
             box-shadow: 0 8px 25px rgba(29, 41, 57, 0.35);
         }
 
-        /* SECTION: Slider Gambar Klinik Teroptimasi */
+        /* SECTION: Slider Gambar Klinik */
         .slider-section {
             padding: 40px 8% 20px 8%;
             background: #ffffff;
@@ -500,7 +507,7 @@
             color: white;
         }
 
-        /* MODAL POPUP PANDUAN PENDAFTARAN RESPONSIVE */
+        /* MODAL POPUP */
         .modal {
             display: none;
             position: fixed;
@@ -699,6 +706,7 @@
             color: #26d4a5;
         }
 
+        /* REVISI: Footer Bottom dengan Perlindungan Privasi Pasien (Poin 2) */
         .footer-bottom {
             border-top: 1px solid #1f2937;
             padding-top: 25px;
@@ -708,6 +716,14 @@
             flex-wrap: wrap;
             gap: 15px;
             font-size: 12px;
+        }
+
+        .footer-bottom .privacy-note {
+            color: #888c9b;
+            font-size: 11px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
         }
 
         @media (max-width: 992px) {
@@ -739,11 +755,13 @@
             .slide-caption { bottom: 15px; left: 15px; font-size: 12px; padding: 8px 14px; }
             .locations-grid { grid-template-columns: 1fr; gap: 30px; }
             .footer-container { grid-template-columns: 1fr; gap: 30px; }
+            .footer-bottom { flex-direction: column; text-align: center; gap: 10px; }
         }
     </style>
 </head>
 <body>
 
+    <!-- Header / Navigasi -->
     <header>
         <a href="about.html" class="logo">
             <i class="fa-solid fa-tooth"></i>
@@ -761,6 +779,7 @@
         </nav>
     </header>
 
+    <!-- SECTION: Hero Banner -->
     <section class="hero-section">
         <div class="hero-text">
             <h1>Healthy Teeth, <span>Beautiful Smile</span></h1>
@@ -777,6 +796,7 @@
         </div>
     </section>
 
+    <!-- SECTION: Bingkai Slider Klinik -->
     <section class="slider-section">
         <div class="hero-slider-container">
             <div class="slide active" style="background-image: url('lanera-luar.jpg');">
@@ -794,6 +814,7 @@
         </div>
     </section>
 
+    <!-- SECTION: Services -->
     <section class="services-section">
         <h2 class="section-title">Layanan Medis & Dental</h2>
         <div class="section-subtitle">Our Professional Services</div>
@@ -821,11 +842,13 @@
         </div>
     </section>
 
+    <!-- SECTION: Locations & Schedules -->
     <section class="locations-section" id="locations">
         <h2 class="section-title">Locations & Schedules</h2>
         <div class="section-subtitle">Practice Locations & Contact Info</div>
         <div class="locations-grid">
             
+            <!-- KLINIK 1 -->
             <div class="location-card">
                 <div>
                     <i class="fa-solid fa-hospital-user location-icon"></i>
@@ -842,6 +865,7 @@
                 </div>
             </div>
 
+            <!-- KLINIK 2 -->
             <div class="location-card">
                 <div>
                     <i class="fa-solid fa-house-medical-flag location-icon"></i>
@@ -855,6 +879,7 @@
                 </div>
             </div>
 
+            <!-- KARTU INFO -->
             <div class="location-card" style="background-color: #ebf7fd; border-color: #bee3f8;">
                 <div>
                     <i class="fa-solid fa-circle-info location-icon" style="color: #0c4a60;"></i>
@@ -866,3 +891,89 @@
                     <button class="card-btn" style="background-color: #0c4a60; color: white; width: 100%; justify-content: center; border-radius: 25px;" onclick="toggleModal(true)"><i class="fa-solid fa-book-medical"></i> Panduan Booking</button>
                 </div>
             </div>
+
+        </div>
+    </section>
+
+    <section id="contact" style="padding: 10px 0;"></section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-brand">
+                <h3>drg. Yuli Kartilla Panjaitan</h3>
+                <p>Layanan konsultasi dan perawatan gigi profesional di Kota Batam. Temukan senyum sehat dan rasa percaya diri Anda kembali melalui perawatan dental modern terbaik kami.</p>
+                <div class="footer-socials-link">
+                    <a href="https://www.instagram.com/laneradentalcare/?hl=id" target="_blank"><i class="fa-brands fa-instagram" style="color: #26d4a5;"></i> @laneradentalcare</a>
+                    <a href="https://www.instagram.com/tpdentalbatam/" target="_blank"><i class="fa-brands fa-instagram" style="color: #26d4a5;"></i> @tpdentalbatam</a>
+                </div>
+            </div>
+
+            <div class="footer-links">
+                <h4>Navigation</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Me</a></li>
+                    <li><a href="#locations">Locations & Schedules</a></li>
+                    <li><a href="#contact">Contact Us</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2026 drg. Yuli Kartilla Panjaitan. All Rights Reserved.</p>
+            <p class="privacy-note"><i class="fa-solid fa-user-shield" style="color: #26d4a5;"></i> Seluruh data format reservasi medis pasien dilindungi & bersifat rahasia.</p>
+            <p>Designed with <i class="fa-solid fa-heart" style="color: #e11d48;"></i> in Batam</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        const header = document.querySelector('header');
+        function checkScroll() {
+            const scrollTop = window.scrollY || window.pageYOffset || document.documentElement.scrollTop;
+            if (scrollTop > 30) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        }
+        window.addEventListener('scroll', checkScroll);
+        window.addEventListener('load', checkScroll);
+
+        function openWhatsApp(nomor, pesan) {
+            const url = `https://wa.me/${nomor}?text=${encodeURIComponent(pesan)}`;
+            window.open(url, '_blank');
+        }
+
+        function toggleModal(show) {
+            const modal = document.getElementById('panduanModal');
+            if (show) {
+                modal.style.display = 'flex';
+                setTimeout(() => modal.classList.add('show'), 10);
+            } else {
+                modal.classList.remove('show');
+                setTimeout(() => modal.style.display = 'none', 300);
+            }
+        }
+
+        const mobileMenu = document.getElementById('mobile-menu');
+        const navList = document.getElementById('nav-list');
+        mobileMenu.addEventListener('click', () => {
+            navList.classList.toggle('active');
+        });
+
+        const slides = document.querySelectorAll('.slide');
+        let currentSlide = 0;
+        function nextSlide() {
+            if (slides.length <= 1) return;
+            slides[currentSlide].classList.remove('active');
+            currentSlide = (currentSlide + 1) % slides.length;
+            slides[currentSlide].classList.add('active');
+        }
+        if (slides.length > 0) {
+            setInterval(nextSlide, 4000);
+        }
+    </script>
+</body>
+</html>
