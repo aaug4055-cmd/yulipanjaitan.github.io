@@ -24,26 +24,26 @@
             overflow-x: hidden;
         }
 
-        /* Navigation Bar - REVISI BACKGROUND BERWARNA & BATASAN JELAS */
+        /* Navigation Bar */
         header {
             display: flex;
             justify-content: space-between;
             align-items: center;
             padding: 22px 8%;
-            background: #f8fafc; /* Menggunakan warna abu-abu sangat muda */
+            background: #f8fafc;
             position: fixed;
             width: 100%;
             z-index: 1000;
             top: 0;
             left: 0;
-            border-bottom: 1px solid #e2e8f0; /* Garis pembatas warna tegas */
+            border-bottom: 1px solid #e2e8f0;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.02);
             transition: all 0.3s ease-in-out;
         }
 
         header.scrolled {
             padding: 12px 8%;
-            background: #f1f5f9; /* Sedikit lebih gelap saat di-scroll */
+            background: #f1f5f9;
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
         }
 
@@ -98,10 +98,10 @@
             cursor: pointer;
         }
 
-        /* SECTION: Hero Banner - REVISI BACKGROUND KONTRAST BERBEDA */
+        /* SECTION: Hero Banner */
         .hero-section {
             padding: 200px 8% 80px 8%;
-            background: linear-gradient(135deg, #eefaf6 0%, #e0f2fe 100%); /* Perpaduan hijau-biru dental cerah yang berbeda */
+            background: linear-gradient(135deg, #eefaf6 0%, #e0f2fe 100%);
             display: flex;
             justify-content: center;
             text-align: center;
@@ -136,37 +136,6 @@
             gap: 15px; 
             flex-wrap: wrap;
             justify-content: center;
-        }
-
-        .btn-primary {
-            display: inline-block;
-            background-color: #26d4a5;
-            color: white;
-            padding: 14px 28px;
-            border-radius: 30px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 14px;
-            box-shadow: 0 5px 15px rgba(38, 212, 165, 0.3);
-            transition: all 0.3s;
-            cursor: pointer;
-            border: none;
-        }
-
-        .btn-primary:hover {
-            background-color: #1fc094;
-            transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(38, 212, 165, 0.4);
-        }
-
-        .btn-about {
-            background-color: #1d2939; 
-            box-shadow: 0 5px 15px rgba(29, 41, 57, 0.15);
-        }
-
-        .btn-about:hover {
-            background-color: #111827;
-            box-shadow: 0 8px 20px rgba(29, 41, 57, 0.3);
         }
 
         /* SECTION: Slider Gambar Klinik Teroptimasi */
@@ -227,7 +196,7 @@
 
         /* SECTION: Services */
         .services-section {
-            padding: 60px 8% 90px 8%;
+            padding: 60px 8% 60px 8%;
             background: #ffffff;
             text-align: center;
         }
@@ -289,11 +258,12 @@
             line-height: 1.6;
         }
 
-        /* SECTION: Locations & Schedules */
+        /* REVISI DESAIN: Locations & Schedules INTERAKTIF SEPERTI MEDICAL SERVICES */
         .locations-section {
-            padding: 90px 8%;
+            padding: 60px 8% 90px 8%;
             background: #f9fafb;
             text-align: center;
+            border-top: 1px solid #e2e8f0;
         }
 
         .locations-grid {
@@ -304,51 +274,60 @@
 
         .location-card {
             background: #ffffff;
+            padding: 35px 25px;
             border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.02);
-            border: 1px solid #eaecf0;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+            border: 1px solid #f2f4f7;
+            transition: all 0.3s;
             text-align: left;
-            padding: 35px;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
         }
 
+        /* Efek interaktif saat hover kartu lokasi */
+        .location-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            border-color: #26d4a5;
+        }
+
+        .location-icon {
+            font-size: 30px;
+            color: #26d4a5;
+            margin-bottom: 20px;
+        }
+
         .location-card h3 {
-            font-size: 20px;
-            color: #0c4a60;
+            font-size: 18px;
+            color: #1d2939;
             margin-bottom: 5px;
             font-weight: 700;
-            display: flex;
-            align-items: center;
-            gap: 10px;
         }
 
         .location-card h4 {
             font-size: 13px;
             text-transform: uppercase;
-            color: #222;
-            margin-top: 5px;
-            margin-bottom: 15px;
+            color: #26d4a5;
+            margin-bottom: 18px;
             letter-spacing: 0.5px;
+            font-weight: 600;
             display: flex;
             align-items: center;
             gap: 6px;
-            font-weight: 600;
         }
 
-        .location-card p {
+        .location-card .address-text {
             font-size: 13px;
-            color: #444;
+            color: #667085;
             line-height: 1.6;
-            margin-bottom: 15px;
+            margin-bottom: 12px;
         }
 
         .card-buttons {
             display: flex;
             gap: 8px;
-            margin-top: 15px;
+            margin-top: 25px;
             flex-wrap: wrap;
         }
 
@@ -377,13 +356,13 @@
 
         .card-btn.maps-btn {
             background-color: transparent;
-            border: 1.5px solid #0c4a60;
-            color: #0c4a60;
+            border: 1.5px solid #1d2939;
+            color: #1d2939;
             box-shadow: none;
         }
 
         .card-btn.maps-btn:hover {
-            background-color: #0c4a60;
+            background-color: #1d2939;
             color: white;
         }
 
@@ -642,7 +621,7 @@
         </nav>
     </header>
 
-    <!-- SECTION: Hero Banner (SUDAH BERWARNA GRADIENT DENTAL KONTRAS) -->
+    <!-- SECTION: Hero Banner -->
     <section class="hero-section">
         <div class="hero-text">
             <h1>Healthy Teeth, <span>Beautiful Smile</span></h1>
@@ -705,19 +684,20 @@
         </div>
     </section>
 
-    <!-- SECTION: Locations & Schedules -->
+    <!-- SECTION: Locations & Schedules (UPDATE DESAIN GRID INTERAKTIF) -->
     <section class="locations-section" id="locations">
         <h2 class="section-title">Locations & Schedules</h2>
         <div class="section-subtitle">Practice Locations & Contact Info</div>
         <div class="locations-grid">
             
-            <!-- KLINIK 1 -->
+            <!-- KLINIK 1 (Lanera Dental Care) -->
             <div class="location-card">
                 <div>
+                    <i class="fa-solid fa-hospital-user location-icon"></i>
                     <h3>Lanera Dental Care</h3>
                     <h4><i class="fa-regular fa-clock"></i> Senin – Sabtu: 10.00 – 16.00 WIB</h4>
-                    <p><strong>Cabang KBC:</strong> Ruko KBC Blok A3 No. 3 Batam Center, Belian, Kec. Batam Kota, Kota Batam, Kepulauan Riau 29464</p>
-                    <p><strong>Cabang Mitra Raya:</strong> Komplek No.3 Blok A, Tlk. Tering, Kec. Batam Kota, Kota Batam, Kepulauan Riau 29461</p>
+                    <p class="address-text"><strong>Cabang KBC:</strong> Ruko KBC Blok A3 No. 3 Batam Center, Belian, Kec. Batam Kota, Kota Batam, Kepulauan Riau 29464</p>
+                    <p class="address-text"><strong>Cabang Mitra Raya:</strong> Komplek No.3 Blok A, Tlk. Tering, Kec. Batam Kota, Kota Batam, Kepulauan Riau 29461</p>
                 </div>
                 <div class="card-buttons">
                     <button class="card-btn" onclick="openWhatsApp('628121646224', 'Halo Lanera Dental Care, saya ingin membuat janji temu dengan drg. Yuli.')"><i class="fa-brands fa-whatsapp"></i> Admin 1</button>
@@ -727,12 +707,13 @@
                 </div>
             </div>
 
-            <!-- KLINIK 2 -->
+            <!-- KLINIK 2 (TP Dental) -->
             <div class="location-card">
                 <div>
+                    <i class="fa-solid fa-house-medical-flag location-icon"></i>
                     <h3>TP Dental</h3>
                     <h4><i class="fa-regular fa-clock"></i> Senin – Sabtu: 16.00 – 18.30 WIB</h4>
-                    <p><strong>Alamat:</strong> Jl. Komp. Bumi Indah Blk. D No. 6, Lubuk Baja Kota, Kec. Lubuk Baja, Kota Batam, Kepulauan Riau 29444 (Belakang Bank BRI)</p>
+                    <p class="address-text"><strong>Alamat:</strong> Jl. Komp. Bumi Indah Blk. D No. 6, Lubuk Baja Kota, Kec. Lubuk Baja, Kota Batam, Kepulauan Riau 29444 (Belakang Bank BRI)</p>
                 </div>
                 <div class="card-buttons">
                     <button class="card-btn" onclick="openWhatsApp('6281373091545', 'Halo TP Dental, saya ingin menjadwalkan kunjungan ke drg. Yuli sore ini.')"><i class="fa-brands fa-whatsapp"></i> Chat Admin</button>
@@ -741,14 +722,15 @@
             </div>
 
             <!-- KARTU INFORMASI EXTRA -->
-            <div class="location-card" style="background-color: #ebf7fd;">
+            <div class="location-card" style="background-color: #ebf7fd; border-color: #bee3f8;">
                 <div>
-                    <h3>Informasi Pasien</h3>
-                    <h4><i class="fa-solid fa-circle-info"></i> Catatan Kunjungan</h4>
-                    <p>Untuk kenyamanan bersama, calon pasien disarankan melakukan konfirmasi atau booking terlebih dahulu melalui WhatsApp klinik masing-masing sebelum datang ke lokasi.</p>
+                    <i class="fa-solid fa-circle-info location-icon" style="color: #0c4a60;"></i>
+                    <h3 style="color: #0c4a60;">Informasi Pasien</h3>
+                    <h4 style="color: #0c4a60;"><i class="fa-solid fa-user-check"></i> Catatan Kunjungan</h4>
+                    <p class="address-text" style="color: #2d3748;">Untuk kenyamanan bersama, calon pasien disarankan melakukan konfirmasi atau booking terlebih dahulu melalui WhatsApp klinik masing-masing sebelum datang ke lokasi.</p>
                 </div>
                 <div class="card-buttons">
-                    <button class="card-btn" style="background-color: #0c4a60; color: white; width: 100%; justify-content: center;" onclick="toggleModal(true)"><i class="fa-solid fa-book-medical"></i> Panduan Booking</button>
+                    <button class="card-btn" style="background-color: #0c4a60; color: white; width: 100%; justify-content: center; border-radius: 25px;" onclick="toggleModal(true)"><i class="fa-solid fa-book-medical"></i> Panduan Booking</button>
                 </div>
             </div>
 
